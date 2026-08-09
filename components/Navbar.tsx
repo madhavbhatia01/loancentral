@@ -17,7 +17,7 @@ export default function Navbar({ onApplyClick }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="hover:opacity-95 transition-opacity" aria-label="LoanCentral Home">
-          <LoanCentralLogo size="md" showTagline={true} />
+          <LoanCentralLogo size="md" />
         </Link>
 
         {/* Desktop Navigation Links */}

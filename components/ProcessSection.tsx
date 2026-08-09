@@ -1,5 +1,5 @@
 import React from "react";
-import { Fingerprint, FileCheck2, Calculator, Banknote, ArrowRight } from "lucide-react";
+import { Fingerprint, FileCheck2, Calculator, Banknote, ShieldCheck } from "lucide-react";
 
 interface ProcessSectionProps {
   onApplyClick: () => void;
@@ -9,82 +9,80 @@ export default function ProcessSection({ onApplyClick }: ProcessSectionProps) {
   const steps = [
     {
       num: "01",
-      title: "Verify mobile",
-      desc: "Start with one number, consent-first OTP, and a resumable application journey.",
+      title: "Verify Mobile",
+      subtitle: "Consent-First OTP",
+      desc: "Instant mobile verification with no bureau pull without explicit approval.",
       icon: Fingerprint,
     },
     {
       num: "02",
-      title: "Share basics",
-      desc: "Income, city, employment type, PAN, and bank statement uploaded in context.",
+      title: "Share Basics",
+      subtitle: "Digital Onboarding",
+      desc: "Income, city, PAN, and Aadhaar e-KYC verified in context.",
       icon: FileCheck2,
     },
     {
       num: "03",
-      title: "Review costs",
-      desc: "Principal, EMI, processing fee, due dates, APR, and total payable stay 100% visible.",
+      title: "Review Offer",
+      subtitle: "Cost Transparency",
+      desc: "Principal, monthly EMI, APR, processing fee, and due dates displayed upfront.",
       icon: Calculator,
     },
     {
       num: "04",
-      title: "Accept securely",
-      desc: "Complete final KYC and e-mandate bank link only after approving the transparent loan offer.",
+      title: "Direct Disbursal",
+      subtitle: "Secure Sign-Off",
+      desc: "Sign e-mandate and receive funds directly into your bank account.",
       icon: Banknote,
     },
   ];
 
   return (
-    <section id="process" className="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <section id="process" className="py-16 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <span className="px-3.5 py-1 rounded-full bg-white/10 border border-white/15 text-teal-300 text-xs font-bold uppercase tracking-wider">
-            Cleaner than the category norm
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#00C9A7]">
+            Application Flow
           </span>
-
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-            One journey from intent to decision.
+          <h2 className="text-2xl sm:text-3xl font-black text-[#0B192C]">
+            One transparent journey from request to decision.
           </h2>
-
-          <p className="text-slate-300 text-base leading-relaxed">
-            The interface is structured around the borrower&apos;s real questions: am I eligible, what will it cost, what documents are needed, and who helps me if something is unclear?
+          <p className="text-xs sm:text-sm text-slate-600">
+            No endless paperwork. No hidden subscription traps. Just a clean 4-step path.
           </p>
         </div>
 
-        {/* 4 Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
               <div
                 key={idx}
                 onClick={onApplyClick}
-                className="relative p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80 hover:border-[#00C9A7] transition-all duration-300 group cursor-pointer flex flex-col justify-between"
+                className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#00C9A7] hover:shadow-lg transition-all duration-300 group cursor-pointer space-y-4"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-3xl font-black text-slate-600 group-hover:text-[#00C9A7] transition-colors">
-                      {step.num}
-                    </span>
-                    <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center text-[#00C9A7] group-hover:bg-[#00C9A7] group-hover:text-slate-950 transition-colors">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                  </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-black px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 group-hover:bg-[#00C9A7] group-hover:text-slate-950 transition-colors">
+                    STEP {step.num}
+                  </span>
+                  <Icon className="w-5 h-5 text-[#00C9A7]" />
+                </div>
 
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#00C9A7] transition-colors">
+                <div>
+                  <h3 className="text-base font-bold text-[#0B192C] group-hover:text-[#00C9A7] transition-colors">
                     {step.title}
                   </h3>
-
-                  <p className="text-slate-400 text-xs leading-relaxed">
-                    {step.desc}
-                  </p>
+                  <span className="text-[11px] font-semibold text-slate-400 block mt-0.5">
+                    {step.subtitle}
+                  </span>
                 </div>
 
-                <div className="pt-6 mt-4 border-t border-slate-700/50 flex items-center text-xs font-semibold text-[#00C9A7] gap-1 group-hover:translate-x-1 transition-transform">
-                  <span>Start Step {step.num}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </div>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  {step.desc}
+                </p>
               </div>
             );
           })}

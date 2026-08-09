@@ -1,81 +1,95 @@
 "use client";
 
-import React from "react";
-import { Stethoscope, Wallet, GraduationCap, Home, Plane, Receipt, IndianRupee, CheckCircle2 } from "lucide-react";
+import React, { useState } from "react";
+import { Stethoscope, Wallet, GraduationCap, Home, Plane, Receipt, ArrowRight } from "lucide-react";
 
 interface UseCasesProps {
   onApplyClick: () => void;
 }
 
 export default function UseCases({ onApplyClick }: UseCasesProps) {
-  const useCases = [
-    { title: "Medical expenses", icon: Stethoscope, desc: "Emergency hospital bills, diagnostic tests, or prescription costs." },
-    { title: "Salary gap", icon: Wallet, desc: "Bridge short-term cash flow gaps until your monthly paycheck arrives." },
-    { title: "Education fees", icon: GraduationCap, desc: "School tuition, college admission fees, or certification courses." },
-    { title: "Home repairs", icon: Home, desc: "Urgent plumbing, electrical repairs, or appliance maintenance." },
-    { title: "Travel plans", icon: Plane, desc: "Urgent family travel, train/flight tickets, or emergency trips." },
-    { title: "Urgent bills", icon: Receipt, desc: "Utility bills, credit card payment cycles, or insurance premiums." },
+  const [activeTab, setActiveTab] = useState(0);
+
+  const categories = [
+    { title: "Medical", icon: Stethoscope, tag: "Emergency Care", desc: "Covers hospital bills, diagnostic procedures, and urgent prescriptions." },
+    { title: "Salary Gap", icon: Wallet, tag: "Cash Flow Bridge", desc: "Bridge short-term expenses until monthly salary disbursal." },
+    { title: "Education", icon: GraduationCap, tag: "Tuition & Skill", desc: "Course admissions, exam fees, and certification expenses." },
+    { title: "Home Repair", icon: Home, tag: "Maintenance", desc: "Emergency home repairs, renovation, or appliance replacements." },
+    { title: "Travel", icon: Plane, tag: "Emergency Travel", desc: "Urgent transit tickets, medical travel, or family trips." },
+    { title: "Urgent Bills", icon: Receipt, tag: "Utilities & Insurance", desc: "Utility bills, insurance premiums, and recurring dues." },
   ];
 
   return (
-    <section id="loans" className="py-20 bg-white border-b border-slate-200">
+    <section id="loans" className="py-16 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Column Text */}
-          <div className="lg:col-span-5 space-y-4">
-            <span className="px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider">
-              Loan Use Cases
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#00C9A7]">
+              Tailored Credit Solutions
             </span>
-
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B192C] leading-tight">
-              Built for urgent expenses, <br />
-              <span className="text-[#00C9A7]">designed for calm decisions.</span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#0B192C] mt-1">
+              Built for urgent needs. Designed for clarity.
             </h2>
-
-            <p className="text-slate-600 text-base leading-relaxed">
-              Most instant-loan pages sell speed first and explain terms later. LoanCentral keeps the page modern, fast, and serious: easy to scan, honest about the journey, and clear about what happens next.
-            </p>
-
-            <div className="pt-2">
-              <button
-                type="button"
-                onClick={onApplyClick}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0B192C] text-white font-semibold text-sm hover:bg-slate-800 transition-colors shadow-md"
-              >
-                <span>Check Your Eligibility</span>
-                <IndianRupee className="w-4 h-4 text-[#00C9A7]" />
-              </button>
-            </div>
           </div>
-
-          {/* Right Column Use Case Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {useCases.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={idx}
-                  onClick={onApplyClick}
-                  className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-[#00C9A7] hover:bg-white hover:shadow-lg transition-all duration-300 group cursor-pointer"
-                >
-                  <div className="flex items-center gap-3.5 mb-2.5">
-                    <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-[#00C9A7] group-hover:bg-[#00C9A7] group-hover:text-white transition-colors">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <h3 className="text-base font-bold text-[#0B192C] group-hover:text-[#00C9A7] transition-colors">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p className="text-xs text-slate-500 leading-relaxed pl-13">
-                    {item.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
+          <p className="text-xs sm:text-sm text-slate-500 max-w-md">
+            Pick a use case to view tailored loan amounts, transparent repayment terms, and instant approval pathways.
+          </p>
         </div>
+
+        {/* Use Case Tabs */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
+          {categories.map((cat, idx) => {
+            const Icon = cat.icon;
+            const isSelected = activeTab === idx;
+            return (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setActiveTab(idx)}
+                className={`p-3.5 rounded-2xl border text-left transition-all ${
+                  isSelected
+                    ? "bg-[#0B192C] border-[#0B192C] text-white shadow-md"
+                    : "bg-slate-50 border-slate-200/80 text-slate-700 hover:border-[#00C9A7] hover:bg-white"
+                }`}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <Icon className={`w-5 h-5 ${isSelected ? "text-[#00C9A7]" : "text-slate-500"}`} />
+                  <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${isSelected ? "bg-white/10 text-teal-300" : "bg-slate-200 text-slate-600"}`}>
+                    0{idx + 1}
+                  </span>
+                </div>
+                <div className="text-xs font-bold">{cat.title}</div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Selected Use Case Details Box */}
+        <div className="p-6 sm:p-8 rounded-3xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 max-w-xl">
+            <span className="px-2.5 py-1 rounded-md bg-[#00C9A7]/20 text-[#00C9A7] text-xs font-bold">
+              {categories[activeTab].tag}
+            </span>
+            <h3 className="text-xl font-bold text-white">
+              Personal Loan for {categories[activeTab].title}
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300">
+              {categories[activeTab].desc}
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onClick={onApplyClick}
+            className="w-full md:w-auto px-6 py-3.5 rounded-xl bg-[#00C9A7] hover:bg-[#00B4D8] text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-colors whitespace-nowrap shadow-md"
+          >
+            <span>Apply for {categories[activeTab].title}</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+
       </div>
     </section>
   );

@@ -5,23 +5,25 @@ import { ShieldCheck } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 text-xs sm:text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <footer className="bg-[#050C1A] text-slate-400 border-t border-slate-800 text-xs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" aria-label="LoanCentral Home">
-              <LoanCentralLogo lightMode={true} size="md" showTagline={true} />
+              <div className="bg-white/95 p-2 rounded-xl inline-block">
+                <LoanCentralLogo size="sm" />
+              </div>
             </Link>
             
-            <p className="text-slate-400 leading-relaxed text-xs max-w-sm">
-              Instant personal loan applications with clear upfront offers, consent-first credit checks, and professional support before acceptance.
+            <p className="text-slate-400 leading-relaxed max-w-sm">
+              Consent-first digital personal loan platform connecting borrowers with RBI-regulated NBFC partners.
             </p>
 
-            <div className="pt-2 text-[11px] text-slate-500 font-medium">
+            <div className="text-[11px] text-slate-500 font-medium pt-1">
               &copy; {new Date().getFullYear()} LoanCentral Technologies. All rights reserved.
             </div>
           </div>
@@ -29,7 +31,7 @@ export default function Footer() {
           {/* Company Links */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Company</h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2">
               <li>
                 <Link href="/about" className="hover:text-[#00C9A7] transition-colors">
                   About Us
@@ -50,8 +52,8 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Legal &amp; Policy</h4>
-            <ul className="space-y-2 text-xs">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Legal</h4>
+            <ul className="space-y-2">
               <li>
                 <Link href="/privacy" className="hover:text-[#00C9A7] transition-colors">
                   Privacy Policy
@@ -73,7 +75,7 @@ export default function Footer() {
           {/* Geographies / Cities */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Geographies</h4>
-            <div className="grid grid-cols-2 gap-2 text-xs">
+            <div className="grid grid-cols-2 gap-2 text-[11px]">
               <Link href="/personal-loan-in-delhi" className="hover:text-[#00C9A7] transition-colors">
                 Delhi
               </Link>
@@ -101,14 +103,14 @@ export default function Footer() {
         </div>
 
         {/* Regulatory Disclosure Bottom Bar (Strictly NO contact phone/email/office address!) */}
-        <div className="mt-12 pt-8 border-t border-slate-800 space-y-3">
-          <div className="flex items-center gap-2 text-white font-bold text-xs">
+        <div className="mt-10 pt-6 border-t border-slate-800 space-y-2 text-[11px] text-slate-500">
+          <div className="flex items-center gap-1.5 text-slate-300 font-bold">
             <ShieldCheck className="w-4 h-4 text-[#00C9A7]" />
-            <span>Regulatory LSP Disclosure</span>
+            <span>Lending Service Provider Disclosure</span>
           </div>
 
-          <p className="text-[11px] text-slate-400 leading-relaxed">
-            LoanCentral operates as a Lending Service Provider (LSP) in partnership with RBI-regulated Non-Banking Financial Companies (NBFCs). Loan approval, amount, tenure, rate, fees, and disbursal are subject to eligibility, partner lender credit policy, completed documentation, and explicit customer consent. LoanCentral does not charge any upfront application fees to customers.
+          <p className="leading-relaxed">
+            LoanCentral operates as a Lending Service Provider (LSP) in partnership with RBI-regulated NBFCs. Loan approval, amount, tenure, rate, fees, and disbursal are subject to eligibility, partner lender credit policy, completed documentation, and explicit customer consent.
           </p>
         </div>
 
