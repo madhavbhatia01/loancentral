@@ -14,9 +14,7 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" aria-label="LoanCentral Home">
-              <div className="bg-white/95 p-2 rounded-xl inline-block">
-                <LoanCentralLogo size="sm" />
-              </div>
+              <LoanCentralLogo lightMode={true} size="md" />
             </Link>
             
             <p className="text-slate-400 leading-relaxed max-w-sm">

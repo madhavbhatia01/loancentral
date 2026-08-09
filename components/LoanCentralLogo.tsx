@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 interface LogoProps {
   className?: string;
@@ -13,19 +12,19 @@ export default function LoanCentralLogo({
   size = "md",
 }: LogoProps) {
   const heightMap = {
-    sm: "h-8 sm:h-9",
-    md: "h-11 sm:h-12",
-    lg: "h-14 sm:h-16",
+    sm: "h-9 sm:h-10",
+    md: "h-12 sm:h-14",
+    lg: "h-16 sm:h-20",
   };
+
+  const logoSrc = lightMode ? "/logo-white.png" : "/logo.png";
 
   return (
     <div className={`inline-flex items-center select-none ${className}`}>
       <img
-        src="/logo.png"
+        src={logoSrc}
         alt="LoanCentral - Loans For Bharat"
-        className={`${heightMap[size]} w-auto object-contain ${
-          lightMode ? "brightness-0 invert drop-shadow-sm" : ""
-        }`}
+        className={`${heightMap[size]} w-auto object-contain transition-all`}
       />
     </div>
   );
