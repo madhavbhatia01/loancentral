@@ -2,7 +2,7 @@ import React from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 interface FinalCTAProps {
-  onApplyClick: () => void;
+  onApplyClick?: () => void;
 }
 
 export default function FinalCTA({ onApplyClick }: FinalCTAProps) {
@@ -25,14 +25,13 @@ export default function FinalCTA({ onApplyClick }: FinalCTAProps) {
         </p>
 
         <div className="pt-4">
-          <button
-            type="button"
-            onClick={onApplyClick}
+          <a
+            href="https://apply.credit91.com"
             className="group inline-flex items-center gap-3 px-9 py-4 rounded-xl bg-gradient-to-r from-[#00C9A7] to-[#00B4D8] text-slate-950 font-bold text-base shadow-xl shadow-[#00C9A7]/20 hover:scale-[1.03] transition-all"
           >
             <span>Apply now</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </div>
       </div>
     </section>

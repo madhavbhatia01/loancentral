@@ -1,8 +1,8 @@
 import React from "react";
-import { Fingerprint, FileCheck2, Calculator, Banknote, ShieldCheck } from "lucide-react";
+import { Fingerprint, FileCheck2, Calculator, Banknote, ArrowRight } from "lucide-react";
 
 interface ProcessSectionProps {
-  onApplyClick: () => void;
+  onApplyClick?: () => void;
 }
 
 export default function ProcessSection({ onApplyClick }: ProcessSectionProps) {
@@ -59,31 +59,38 @@ export default function ProcessSection({ onApplyClick }: ProcessSectionProps) {
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
-              <div
+              <a
                 key={idx}
-                onClick={onApplyClick}
-                className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#00C9A7] hover:shadow-lg transition-all duration-300 group cursor-pointer space-y-4"
+                href="https://apply.credit91.com"
+                className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#00C9A7] hover:shadow-lg transition-all duration-300 group cursor-pointer space-y-4 flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-black px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 group-hover:bg-[#00C9A7] group-hover:text-slate-950 transition-colors">
-                    STEP {step.num}
-                  </span>
-                  <Icon className="w-5 h-5 text-[#00C9A7]" />
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-black px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 group-hover:bg-[#00C9A7] group-hover:text-slate-950 transition-colors">
+                      STEP {step.num}
+                    </span>
+                    <Icon className="w-5 h-5 text-[#00C9A7]" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-base font-bold text-[#0B192C] group-hover:text-[#00C9A7] transition-colors">
+                      {step.title}
+                    </h3>
+                    <span className="text-[11px] font-semibold text-slate-400 block mt-0.5">
+                      {step.subtitle}
+                    </span>
+                  </div>
+
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {step.desc}
+                  </p>
                 </div>
 
-                <div>
-                  <h3 className="text-base font-bold text-[#0B192C] group-hover:text-[#00C9A7] transition-colors">
-                    {step.title}
-                  </h3>
-                  <span className="text-[11px] font-semibold text-slate-400 block mt-0.5">
-                    {step.subtitle}
-                  </span>
+                <div className="pt-4 border-t border-slate-100 flex items-center text-xs font-bold text-[#00C9A7] gap-1 group-hover:translate-x-1 transition-transform">
+                  <span>Start Step {step.num}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </div>
-
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {step.desc}
-                </p>
-              </div>
+              </a>
             );
           })}
         </div>

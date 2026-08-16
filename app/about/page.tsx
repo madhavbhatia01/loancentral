@@ -1,13 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { ShieldCheck, Award, Target, Landmark, CheckCircle, ArrowRight } from "lucide-react";
 import ExperienceMarquee from "@/components/ExperienceMarquee";
-import ApplyNowModal from "@/components/ApplyNowModal";
 
 export default function AboutPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <div className="py-12 md:py-20 bg-slate-50 space-y-16">
       
@@ -100,19 +97,17 @@ export default function AboutPage() {
             Check your eligibility in under 2 minutes with no bureau pull without consent.
           </p>
           <div>
-            <button
-              type="button"
-              onClick={() => setIsModalOpen(true)}
+            <a
+              href="https://apply.credit91.com"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#0B192C] text-white font-bold text-sm shadow-md hover:bg-slate-800 transition-colors"
             >
               <span>Apply now</span>
               <ArrowRight className="w-4 h-4 text-[#00C9A7]" />
-            </button>
+            </a>
           </div>
         </div>
       </section>
 
-      <ApplyNowModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

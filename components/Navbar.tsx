@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import LoanCentralLogo from "./LoanCentralLogo";
-import { Menu, X, ArrowRight, Sparkles } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 interface NavbarProps {
-  onApplyClick: () => void;
+  onApplyClick?: () => void;
 }
 
 export default function Navbar({ onApplyClick }: NavbarProps) {
@@ -44,25 +44,23 @@ export default function Navbar({ onApplyClick }: NavbarProps) {
 
         {/* Desktop Action CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <button
-            type="button"
-            onClick={onApplyClick}
+          <a
+            href="https://apply.credit91.com"
             className="group relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0B192C] hover:bg-[#0F2137] text-white font-semibold text-sm shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:scale-[1.02]"
           >
             <span>Apply now</span>
             <ArrowRight className="w-4 h-4 text-[#00C9A7] group-hover:translate-x-0.5 transition-transform" />
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="flex md:hidden items-center gap-2">
-          <button
-            type="button"
-            onClick={onApplyClick}
+          <a
+            href="https://apply.credit91.com"
             className="px-3.5 py-1.5 rounded-full bg-[#0B192C] text-white text-xs font-semibold flex items-center gap-1"
           >
             <span>Apply</span>
-          </button>
+          </a>
 
           <button
             type="button"
@@ -122,17 +120,13 @@ export default function Navbar({ onApplyClick }: NavbarProps) {
           </Link>
 
           <div className="pt-2">
-            <button
-              type="button"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onApplyClick();
-              }}
+            <a
+              href="https://apply.credit91.com"
               className="w-full py-3 rounded-xl bg-[#0B192C] text-white font-semibold text-center flex items-center justify-center gap-2 shadow-md"
             >
               <span>Apply now</span>
               <ArrowRight className="w-4 h-4 text-[#00C9A7]" />
-            </button>
+            </a>
           </div>
         </div>
       )}

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { MapPin, ShieldCheck, Clock, CheckCircle2, IndianRupee, ArrowRight, Building2 } from "lucide-react";
+import React from "react";
+import { MapPin, ShieldCheck, CheckCircle2, ArrowRight, Building2 } from "lucide-react";
 import EMICalculator from "./EMICalculator";
 
 interface CityLoanPageProps {
@@ -41,14 +41,13 @@ export default function CityLoanPage({
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-4">
-            <button
-              type="button"
-              onClick={onApplyClick}
+            <a
+              href="https://apply.credit91.com"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#00C9A7] to-[#00B4D8] text-slate-950 font-bold text-sm shadow-lg transition-transform hover:scale-[1.02]"
             >
               <span>Apply in {cityName}</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
 
             <span className="text-xs text-slate-400 font-medium">
               Average decision time in {cityName}: <strong className="text-teal-300">{avgApprovalTime}</strong>

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Stethoscope, Wallet, GraduationCap, Home, Plane, Receipt, ArrowRight } from "lucide-react";
 
 interface UseCasesProps {
-  onApplyClick: () => void;
+  onApplyClick?: () => void;
 }
 
 export default function UseCases({ onApplyClick }: UseCasesProps) {
@@ -80,14 +80,13 @@ export default function UseCases({ onApplyClick }: UseCasesProps) {
             </p>
           </div>
 
-          <button
-            type="button"
-            onClick={onApplyClick}
-            className="w-full md:w-auto px-6 py-3.5 rounded-xl bg-[#00C9A7] hover:bg-[#00B4D8] text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-colors whitespace-nowrap shadow-md"
+          <a
+            href="https://apply.credit91.com"
+            className="w-full md:w-auto px-6 py-3.5 rounded-xl bg-[#00C9A7] hover:bg-[#00B4D8] text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-colors whitespace-nowrap shadow-md text-center"
           >
             <span>Apply for {categories[activeTab].title}</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
 
       </div>

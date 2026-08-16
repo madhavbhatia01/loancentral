@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, ShieldCheck, Zap, Lock, Sparkles, CheckCircle2, IndianRupee } from "lucide-react";
+import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 
 interface HeroProps {
-  onApplyClick: () => void;
+  onApplyClick?: () => void;
 }
 
 export default function Hero({ onApplyClick }: HeroProps) {
@@ -67,14 +67,13 @@ export default function Hero({ onApplyClick }: HeroProps) {
 
             {/* Primary Action Button */}
             <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <button
-                type="button"
-                onClick={onApplyClick}
+              <a
+                href="https://apply.credit91.com"
                 className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00C9A7] to-[#00B4D8] hover:opacity-95 rounded-xl shadow-lg shadow-[#00C9A7]/20 transition-all hover:scale-[1.02]"
               >
                 <span>Check Your Offer</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
 
               <span className="text-xs text-slate-400 font-medium">
                 Regulated NBFC Origination
@@ -162,13 +161,12 @@ export default function Hero({ onApplyClick }: HeroProps) {
               </div>
 
               {/* CTA Inside Widget */}
-              <button
-                type="button"
-                onClick={onApplyClick}
-                className="w-full py-3.5 rounded-xl bg-[#00C9A7] hover:bg-[#00B4D8] text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-md"
+              <a
+                href="https://apply.credit91.com"
+                className="w-full py-3.5 rounded-xl bg-[#00C9A7] hover:bg-[#00B4D8] text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-md flex items-center justify-center text-center"
               >
                 Apply for ₹{amount.toLocaleString("en-IN")}
-              </button>
+              </a>
 
               <div className="text-center text-[11px] text-slate-500">
                 Consent-first verification. Final loan sanction subject to NBFC policy.

@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { ShieldCheck, IndianRupee, HelpCircle, ArrowRight, Table } from "lucide-react";
+import { ShieldCheck, ArrowRight, Table } from "lucide-react";
 
 interface EMICalculatorProps {
-  onApplyClick: () => void;
+  onApplyClick?: () => void;
 }
 
 export default function EMICalculator({ onApplyClick }: EMICalculatorProps) {
@@ -78,14 +78,13 @@ export default function EMICalculator({ onApplyClick }: EMICalculatorProps) {
             </div>
 
             <div>
-              <button
-                type="button"
-                onClick={onApplyClick}
+              <a
+                href="https://apply.credit91.com"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#0B192C] hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all"
               >
                 <span>Apply with transparent rates</span>
                 <ArrowRight className="w-4 h-4 text-[#00C9A7]" />
-              </button>
+              </a>
             </div>
           </div>
 
