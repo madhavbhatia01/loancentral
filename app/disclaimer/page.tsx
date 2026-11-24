@@ -3,28 +3,28 @@ import { Scale, ShieldCheck, AlertTriangle, Building2 } from "lucide-react";
 
 export default function DisclaimerPage() {
   return (
-    <div className="py-12 md:py-20 bg-slate-50">
+    <div className="py-12 md:py-20 hm-bg-paper-soft">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Title */}
         <div className="space-y-3 text-center sm:text-left">
-          <span className="px-3.5 py-1 rounded-full bg-teal-100/80 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider">
+          <span className="px-3.5 py-1 rounded-full hm-bg-mint-soft border hm-border-mint hm-text-mint text-xs font-bold ">
             Regulatory Disclosure
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0B192C]">
+          <h1 className="text-3xl sm:text-4xl font-extrabold hm-text-ink">
             Disclaimer &amp; Regulatory Status
           </h1>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs hm-text-muted">
             Official Lending Service Provider (LSP) Notice
           </p>
         </div>
 
         {/* Content Card */}
-        <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 text-slate-700 text-xs sm:text-sm leading-relaxed">
+        <div className="hm-bg-card p-8 sm:p-12 rounded-3xl border hm-border-rule shadow-sm space-y-8 hm-text-ink-soft text-xs sm:text-sm leading-relaxed">
           
           <div className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0B192C] flex items-center gap-2">
-              <Scale className="w-5 h-5 text-[#00C9A7]" />
+            <h2 className="text-lg font-bold hm-text-ink flex items-center gap-2">
+              <Scale className="w-5 h-5 hm-text-blue" />
               1. Non-Lender Status
             </h2>
             <p>
@@ -33,8 +33,8 @@ export default function DisclaimerPage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0B192C] flex items-center gap-2">
-              <Building2 className="w-5 h-5 text-[#00B4D8]" />
+            <h2 className="text-lg font-bold hm-text-ink flex items-center gap-2">
+              <Building2 className="w-5 h-5 hm-text-blue" />
               2. RBI-Regulated Lending Partners
             </h2>
             <p>
@@ -43,8 +43,8 @@ export default function DisclaimerPage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0B192C] flex items-center gap-2">
-              <AlertTriangle className="w-5 h-5 text-[#00C9A7]" />
+            <h2 className="text-lg font-bold hm-text-ink flex items-center gap-2">
+              <AlertTriangle className="w-5 h-5 hm-text-blue" />
               3. No Upfront Fee Policy
             </h2>
             <p>
@@ -53,8 +53,8 @@ export default function DisclaimerPage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0B192C] flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-[#00B4D8]" />
+            <h2 className="text-lg font-bold hm-text-ink flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 hm-text-blue" />
               4. Calculation Estimates
             </h2>
             <p>

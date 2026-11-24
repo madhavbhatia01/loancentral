@@ -1,5 +1,5 @@
 import React from "react";
-import { Building2, GraduationCap, Landmark, ShieldAlert, Award } from "lucide-react";
+import { Building2, GraduationCap, Landmark } from "lucide-react";
 
 export default function ExperienceMarquee() {
   const experiences = [
@@ -16,28 +16,29 @@ export default function ExperienceMarquee() {
   ];
 
   return (
-    <section className="py-12 bg-slate-900 border-y border-slate-800 text-slate-300 overflow-hidden">
+    <section className="py-10 sm:py-14 hm-bg-paper-deep border-y hm-border-rule hm-text-ink-soft overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-8">
+        <p className="text-center text-[11px] sm:text-xs font-semibold tracking-[0.18em] hm-text-muted mb-6 sm:mb-8">
           Our Leadership &amp; Engineering Team Brings Deep Experience From:
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        {/* 2 cols on mobile with compact gap to prevent 320px overflow */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 sm:gap-4">
           {experiences.map((exp, idx) => {
             const Icon = exp.icon;
             return (
               <div
                 key={idx}
-                className="flex items-center gap-3 p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/60 hover:border-[#00C9A7]/50 hover:bg-slate-800 transition-all duration-300 group"
+                className="flex items-center gap-2.5 sm:gap-3 p-2.5 sm:p-3.5 rounded-xl hm-bg-card border hm-border-rule hm-hover-border-blue transition-colors duration-200 group shadow-xs"
               >
-                <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-[#00C9A7] group-hover:scale-110 transition-transform">
-                  <Icon className="w-4 h-4" />
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg hm-bg-blue-soft flex items-center justify-center hm-text-blue group-hover:scale-105 transition-transform flex-shrink-0">
+                  <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
-                <div>
-                  <h4 className="text-xs font-bold text-white group-hover:text-[#00C9A7] transition-colors">
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-xs font-bold hm-text-ink hm-group-text-blue transition-colors truncate">
                     {exp.name}
-                  </h4>
-                  <span className="text-[10px] text-slate-400">{exp.category}</span>
+                  </h3>
+                  <span className="text-[10px] hm-text-muted block truncate">{exp.category}</span>
                 </div>
               </div>
             );

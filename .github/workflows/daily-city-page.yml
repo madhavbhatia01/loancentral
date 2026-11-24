@@ -1,0 +1,57 @@
+name: Daily City Page Automation
+
+on:
+  schedule:
+    # 09:00 IST is 03:30 UTC
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+    inputs:
+      city_slug:
+        description: 'Specific city slug to publish (e.g., personal-loan-in-mumbai)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish-city-page:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate City Page
+        run: |
+          if [ -n "${{ github.event.inputs.city_slug }}" ]; then
+            node scripts/generate-city-page.js --slug=${{ github.event.inputs.city_slug }}
+          else
+            node scripts/generate-city-page.js
+          fi
+
+      - name: Run Strict Compliance Validation
+        run: node scripts/compliance-validator.js
+
+      - name: Run Next.js Production Build Validation
+        run: npm run build
+
+      - name: Commit and Publish
+        run: |
+          git config --global user.name "LoanCentral Automation Bot"
+          git config --global user.email "bot@loancentral.in"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No new city pages generated today."
+          else
+            git commit -m "chore(city-page): publish daily city page [skip ci]"
+            git push origin main
+          fi

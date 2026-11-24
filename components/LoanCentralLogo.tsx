@@ -1,20 +1,24 @@
+"use client";
+
 import React from "react";
 
 interface LogoProps {
   className?: string;
   lightMode?: boolean;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "header";
 }
 
 export default function LoanCentralLogo({
   className = "",
   lightMode = false,
-  size = "md",
+  size = "header",
 }: LogoProps) {
-  const heightMap = {
-    sm: "h-9 sm:h-10",
+  // Tightly cropped 3.2:1 aspect ratio: zero empty margins, big and bold
+  const heightClasses = {
+    sm: "h-10 sm:h-11",
     md: "h-12 sm:h-14",
-    lg: "h-16 sm:h-20",
+    header: "h-14 sm:h-16 md:h-[68px] max-h-[68px]",
+    lg: "h-16 sm:h-18 md:h-20",
   };
 
   const logoSrc = lightMode ? "/logo-white.png" : "/logo.png";
@@ -24,7 +28,8 @@ export default function LoanCentralLogo({
       <img
         src={logoSrc}
         alt="LoanCentral - Loans For Bharat"
-        className={`${heightMap[size]} w-auto object-contain transition-all`}
+        className={`${heightClasses[size]} w-auto object-contain transition-transform duration-200 active:scale-95 drop-shadow-xs`}
+        loading="eager"
       />
     </div>
   );

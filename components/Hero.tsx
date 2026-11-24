@@ -1,181 +1,135 @@
 "use client";
 
-import React, { useState } from "react";
-import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
+import React from "react";
+import Image from "next/image";
+import { ArrowRight, CheckCircle2, ShieldCheck, Building2, Calendar, Banknote } from "lucide-react";
 
 interface HeroProps {
   onApplyClick?: () => void;
 }
 
 export default function Hero({ onApplyClick }: HeroProps) {
-  const [amount, setAmount] = useState(75000);
-  const [months, setMonths] = useState(12);
-
-  // Reducing balance EMI calculation (18% p.a.)
-  const rate = 18 / 12 / 100;
-  const emi = Math.round((amount * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1));
-
   return (
-    <section className="relative overflow-hidden bg-[#0A1628] text-white pt-10 pb-16 lg:pt-16 lg:pb-24">
-      {/* Glow background accents */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#00C9A7]/15 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-[#00B4D8]/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative overflow-hidden hm-text-ink pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-20 border-b hm-border-rule">
+      {/* Soft luminous ambient accents */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[300px] hm-primary rounded-full blur-3xl pointer-events-none opacity-5" />
+      <div className="absolute top-20 left-10 w-[350px] h-[350px] hm-bg-coral rounded-full blur-3xl pointer-events-none opacity-5" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        {/* Desktop 12-col balanced grid; Mobile single column */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Hero Headlines & Value Props */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* Left Column: Headline, Description, 4 Clean Feature Cards (Zero Figures), CTA */}
+          <div className="lg:col-span-6 space-y-5">
             
-            {/* Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[#00C9A7] text-xs font-semibold tracking-wide">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Consent-First Digital Lending Platform</span>
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1]">
-              Instant personal loans. <br />
-              <span className="bg-gradient-to-r from-[#00C9A7] via-[#00B4D8] to-teal-200 bg-clip-text text-transparent">
-                Zero hidden costs.
+            {/* Main Heading */}
+            <h1 className="text-[clamp(2.10rem,7.5vw,3.25rem)] font-black tracking-tight leading-[1.12] hm-text-ink">
+              Personal loans,{" "}
+              <span className="hm-text-blue">
+                aligned with your salary cycle.
               </span>
             </h1>
 
-            <p className="text-slate-300 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
-              Check eligibility, compare total costs, and accept loan offers from RBI-regulated NBFC partners in a phone-first journey.
+            {/* Supporting Sentence (Zero figures) */}
+            <p className="hm-text-ink-soft text-base sm:text-lg max-w-xl font-normal leading-relaxed">
+              Fast, paperless personal funds for urgent emergency expenses, medical needs, and everyday salary-cycle gaps.
             </p>
 
-            {/* Quick Feature Checklist */}
-            <div className="grid grid-cols-2 gap-3 pt-2 max-w-lg text-xs sm:text-sm text-slate-300 font-medium">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#00C9A7]" />
-                <span>No credit pull without OTP</span>
+            {/* Four Verified Product Facts (2x2 grid, Zero Figures) */}
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5 pt-1 max-w-xl">
+              <div className="p-3 sm:p-4 rounded-2xl hm-bg-card border hm-border-rule shadow-xs flex items-start gap-3">
+                <div className="w-8 h-8 rounded-xl hm-bg-blue-soft border hm-border-blue flex items-center justify-center hm-text-blue flex-shrink-0 mt-0.5">
+                  <Building2 className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-[13px] sm:text-sm font-bold hm-text-ink">Salaried only</div>
+                  <div className="text-[11px] hm-text-muted font-medium">Direct bank salary credit</div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#00C9A7]" />
-                <span>Transparent APR &amp; EMI</span>
+
+              <div className="p-3 sm:p-4 rounded-2xl hm-bg-card border hm-border-rule shadow-xs flex items-start gap-3">
+                <div className="w-8 h-8 rounded-xl hm-bg-pear-soft border hm-border-pear flex items-center justify-center hm-text-coral flex-shrink-0 mt-0.5">
+                  <Banknote className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-[13px] sm:text-sm font-bold hm-text-ink">Urgent Emergency Funds</div>
+                  <div className="text-[11px] hm-text-muted font-medium">Medical, bills, travel &amp; more</div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#00C9A7]" />
-                <span>0 upfront application fee</span>
+
+              <div className="p-3 sm:p-4 rounded-2xl hm-bg-card border hm-border-rule shadow-xs flex items-start gap-3">
+                <div className="w-8 h-8 rounded-xl hm-bg-blue-soft border hm-border-blue flex items-center justify-center hm-text-blue flex-shrink-0 mt-0.5">
+                  <Calendar className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-[13px] sm:text-sm font-bold hm-text-ink">Flexible Tenure</div>
+                  <div className="text-[11px] hm-text-muted font-medium">Aligned with salary schedule</div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#00C9A7]" />
-                <span>Paperless 10-minute flow</span>
+
+              <div className="p-3 sm:p-4 rounded-2xl hm-bg-card border hm-border-rule shadow-xs flex items-start gap-3">
+                <div className="w-8 h-8 rounded-xl hm-bg-mint-soft border hm-border-mint flex items-center justify-center hm-text-mint flex-shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-[13px] sm:text-sm font-bold hm-text-ink">Single repayment</div>
+                  <div className="text-[11px] hm-text-muted font-medium">No multi-month EMI trap</div>
+                </div>
               </div>
             </div>
 
-            {/* Primary Action Button */}
-            <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            {/* Primary CTA */}
+            <div id="hero-cta-marker" className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <a
                 href="https://apply.credit91.com"
-                className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00C9A7] to-[#00B4D8] hover:opacity-95 rounded-xl shadow-lg shadow-[#00C9A7]/20 transition-all hover:scale-[1.02]"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-3 px-8 py-3.5 text-base font-black hm-text-paper hm-primary hm-hover-primary active:scale-[0.99] rounded-xl shadow-lg hm-shadow-primary transition-colors text-center"
               >
                 <span>Check Your Offer</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 hm-text-coral" />
               </a>
 
-              <span className="text-xs text-slate-400 font-medium">
-                Regulated NBFC Origination
-              </span>
+              <div className="flex items-center justify-center sm:justify-start gap-1.5 text-xs hm-text-ink-soft font-semibold">
+                <ShieldCheck className="w-4 h-4 hm-text-blue flex-shrink-0" />
+                <span>Application subject to verification and approval</span>
+              </div>
+            </div>
+
+            {/* Regulatory footnote */}
+            <div className="text-[11px] hm-text-muted flex items-center gap-2 pt-1 font-medium">
+              <span className="w-2 h-2 rounded-full hm-bg-coral flex-shrink-0" />
+              <span>Partnered with RBI-regulated NBFCs · Zero upfront application fees</span>
             </div>
 
           </div>
 
-          {/* Right Column: Fintech Live Calculator Widget */}
-          <div className="lg:col-span-5">
-            <div className="bg-slate-900/90 border border-slate-800 p-6 sm:p-7 rounded-3xl shadow-2xl backdrop-blur-xl space-y-6 relative">
-              
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                <div>
-                  <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider block">EMI Preview</span>
-                  <h3 className="text-lg font-extrabold text-white">Instant Loan Estimator</h3>
-                </div>
-                <span className="px-2.5 py-1 rounded-full bg-[#00C9A7]/10 text-[#00C9A7] text-[11px] font-bold border border-[#00C9A7]/20">
-                  18% p.a. APR
-                </span>
+          {/* Right Column: Clean Hero Banner Showcase (No redundant top calculator) */}
+          <div className="lg:col-span-6 w-full space-y-2.5">
+            <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border hm-border-rule shadow-lg aspect-[16/10] sm:aspect-[16/10] hm-bg-paper-deep">
+              <Image
+                src="/images/hum-hero-loan-disbursed.png"
+                alt="Happy salaried professional showing a phone with loan disbursed confirmation"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-[46%_center]"
+              />
+            </div>
+
+            {/* Clean Sub-Caption Pill */}
+            <div className="flex items-center justify-between px-3.5 py-2.5 rounded-xl hm-bg-card border hm-border-rule shadow-xs hm-text-ink-soft text-xs font-semibold">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full hm-bg-mint animate-pulse" />
+                <span>Direct bank disbursal confirmed</span>
               </div>
-
-              {/* Slider 1: Amount */}
-              <div className="space-y-2">
-                <div className="flex justify-between items-center text-xs font-semibold">
-                  <span className="text-slate-400">Loan Amount</span>
-                  <span className="text-base font-bold text-[#00C9A7] bg-slate-800 px-3 py-1 rounded-lg">
-                    ₹ {amount.toLocaleString("en-IN")}
-                  </span>
-                </div>
-                <input
-                  type="range"
-                  min="10000"
-                  max="300000"
-                  step="5000"
-                  value={amount}
-                  onChange={(e) => setAmount(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#00C9A7]"
-                />
-                <div className="flex justify-between text-[10px] text-slate-500 font-medium">
-                  <span>₹10,000</span>
-                  <span>₹1,50,000</span>
-                  <span>₹3,00,000</span>
-                </div>
+              <div className="hm-text-muted font-medium text-[11px] hidden sm:block">
+                DigiLocker Verified · Bullet Settle
               </div>
-
-              {/* Slider 2: Tenure */}
-              <div className="space-y-2">
-                <div className="flex justify-between items-center text-xs font-semibold">
-                  <span className="text-slate-400">Repayment Tenure</span>
-                  <span className="text-base font-bold text-white bg-slate-800 px-3 py-1 rounded-lg">
-                    {months} Months
-                  </span>
-                </div>
-                <input
-                  type="range"
-                  min="3"
-                  max="24"
-                  step="1"
-                  value={months}
-                  onChange={(e) => setMonths(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#00B4D8]"
-                />
-                <div className="flex justify-between text-[10px] text-slate-500 font-medium">
-                  <span>3 Mo</span>
-                  <span>12 Mo</span>
-                  <span>24 Mo</span>
-                </div>
-              </div>
-
-              {/* Calculation Summary Box */}
-              <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 grid grid-cols-2 gap-4">
-                <div>
-                  <span className="text-[10px] text-slate-400 uppercase tracking-wider block font-semibold">Monthly EMI</span>
-                  <strong className="text-2xl font-black text-[#00C9A7]">
-                    ₹ {emi.toLocaleString("en-IN")}
-                  </strong>
-                </div>
-                <div>
-                  <span className="text-[10px] text-slate-400 uppercase tracking-wider block font-semibold">Total Payable</span>
-                  <strong className="text-lg font-bold text-slate-200">
-                    ₹ {(emi * months).toLocaleString("en-IN")}
-                  </strong>
-                </div>
-              </div>
-
-              {/* CTA Inside Widget */}
-              <a
-                href="https://apply.credit91.com"
-                className="w-full py-3.5 rounded-xl bg-[#00C9A7] hover:bg-[#00B4D8] text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-md flex items-center justify-center text-center"
-              >
-                Apply for ₹{amount.toLocaleString("en-IN")}
-              </a>
-
-              <div className="text-center text-[11px] text-slate-500">
-                Consent-first verification. Final loan sanction subject to NBFC policy.
-              </div>
-
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
   );

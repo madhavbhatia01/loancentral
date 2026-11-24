@@ -11,35 +11,78 @@ export default function UseCases({ onApplyClick }: UseCasesProps) {
   const [activeTab, setActiveTab] = useState(0);
 
   const categories = [
-    { title: "Medical", icon: Stethoscope, tag: "Emergency Care", desc: "Covers hospital bills, diagnostic procedures, and urgent prescriptions." },
-    { title: "Salary Gap", icon: Wallet, tag: "Cash Flow Bridge", desc: "Bridge short-term expenses until monthly salary disbursal." },
-    { title: "Education", icon: GraduationCap, tag: "Tuition & Skill", desc: "Course admissions, exam fees, and certification expenses." },
-    { title: "Home Repair", icon: Home, tag: "Maintenance", desc: "Emergency home repairs, renovation, or appliance replacements." },
-    { title: "Travel", icon: Plane, tag: "Emergency Travel", desc: "Urgent transit tickets, medical travel, or family trips." },
-    { title: "Urgent Bills", icon: Receipt, tag: "Utilities & Insurance", desc: "Utility bills, insurance premiums, and recurring dues." },
+    {
+      title: "Urgent Month-End Expenses",
+      icon: Wallet,
+      tag: "Month-End Support",
+      desc: "Cover unexpected mid-month expenses or delayed payments until your upcoming salary credit.",
+      amountRange: "₹10,000 – ₹60,000",
+      idealTenure: "30 or 40 Days",
+    },
+    {
+      title: "Medical Emergencies",
+      icon: Stethoscope,
+      tag: "Healthcare",
+      desc: "Immediate funds for diagnostic tests, pharmacy bills, or emergency hospital room deposits.",
+      amountRange: "₹15,000 – ₹60,000",
+      idealTenure: "30, 40, or 50 Days",
+    },
+    {
+      title: "Urgent Bills & Dues",
+      icon: Receipt,
+      tag: "Utilities",
+      desc: "Avoid late penalties on electricity, credit cards, or essential household utility bills.",
+      amountRange: "₹10,000 – ₹40,000",
+      idealTenure: "30 Days",
+    },
+    {
+      title: "Education & Fees",
+      icon: GraduationCap,
+      tag: "Tuition / Exam",
+      desc: "Pay semester fees, competitive exam application costs, or certification upskilling expenses.",
+      amountRange: "₹20,000 – ₹60,000",
+      idealTenure: "40 or 50 Days",
+    },
+    {
+      title: "Home & Auto Repairs",
+      icon: Home,
+      tag: "Maintenance",
+      desc: "Fix urgent plumbing, water seepage, or vehicle breakdown without waiting for month-end.",
+      amountRange: "₹10,000 – ₹50,000",
+      idealTenure: "30 or 40 Days",
+    },
+    {
+      title: "Emergency Travel",
+      icon: Plane,
+      tag: "Transit",
+      desc: "Book last-minute train or flight tickets to visit hometown during urgent family situations.",
+      amountRange: "₹10,000 – ₹50,000",
+      idealTenure: "30 or 40 Days",
+    },
   ];
 
   return (
-    <section id="loans" className="py-16 bg-white border-b border-slate-200">
+    <section id="loans" className="py-14 sm:py-20 hm-bg-paper-soft border-b hm-border-rule">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#00C9A7]">
-              Tailored Credit Solutions
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-12">
+          <div className="space-y-2">
+            <span className="px-3 py-1 rounded-full hm-bg-blue-soft border hm-border-blue hm-text-blue text-xs font-bold ">
+              Urgent Use Cases
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#0B192C] mt-1">
-              Built for urgent needs. Designed for clarity.
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black hm-text-ink">
+              Built for urgent needs. <br className="hidden sm:block" />
+              <span className="hm-no-gradient hm-no-gradient hm-no-gradient hm-text-ink">Settled on your next salary.</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-slate-500 max-w-md">
-            Pick a use case to view tailored loan amounts, transparent repayment terms, and instant approval pathways.
+          <p className="text-xs sm:text-sm hm-text-muted max-w-md leading-relaxed">
+            Borrow what you need to meet immediate obligations without getting locked into multi-year high-interest loans.
           </p>
         </div>
 
-        {/* Use Case Tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
+        {/* Use Case Tabs: 2 cols on smallest mobile, 3 cols on tablet, 6 cols on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3 mb-6 sm:mb-8">
           {categories.map((cat, idx) => {
             const Icon = cat.icon;
             const isSelected = activeTab === idx;
@@ -48,45 +91,69 @@ export default function UseCases({ onApplyClick }: UseCasesProps) {
                 key={idx}
                 type="button"
                 onClick={() => setActiveTab(idx)}
-                className={`p-3.5 rounded-2xl border text-left transition-all ${
+                aria-pressed={isSelected}
+                className={`min-h-[56px] p-3 rounded-xl border text-left transition-colors ${
                   isSelected
-                    ? "bg-[#0B192C] border-[#0B192C] text-white shadow-md"
-                    : "bg-slate-50 border-slate-200/80 text-slate-700 hover:border-[#00C9A7] hover:bg-white"
+                    ? "hm-primary hm-border-blue hm-text-paper shadow-md ring-2 hm-focus ring-offset-1"
+                    : "hm-bg-card hm-border-rule hm-text-ink-soft hm-hover-border-blue hm-hover-blue-soft active:scale-95"
                 }`}
               >
-                <div className="flex items-center justify-between mb-2">
-                  <Icon className={`w-5 h-5 ${isSelected ? "text-[#00C9A7]" : "text-slate-500"}`} />
-                  <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${isSelected ? "bg-white/10 text-teal-300" : "bg-slate-200 text-slate-600"}`}>
+                <div className="flex items-center justify-between mb-1.5">
+                  <Icon className={`w-4 h-4 ${isSelected ? "hm-text-coral" : "hm-text-blue"}`} />
+                  <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${isSelected ? "hm-bg-card hm-text-paper" : "hm-bg-paper-deep hm-text-muted"}`}>
                     0{idx + 1}
                   </span>
                 </div>
-                <div className="text-xs font-bold">{cat.title}</div>
+                <div className="text-xs font-bold line-clamp-1">{cat.title}</div>
               </button>
             );
           })}
         </div>
 
         {/* Selected Use Case Details Box */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 max-w-xl">
-            <span className="px-2.5 py-1 rounded-md bg-[#00C9A7]/20 text-[#00C9A7] text-xs font-bold">
-              {categories[activeTab].tag}
-            </span>
-            <h3 className="text-xl font-bold text-white">
-              Personal Loan for {categories[activeTab].title}
+        <div className="p-5 sm:p-7 md:p-8 rounded-2xl sm:rounded-3xl hm-bg-card border-2 hm-border-blue hm-text-ink flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6 shadow-xl">
+          <div className="space-y-3 max-w-2xl">
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-1 rounded-md hm-bg-blue-soft hm-text-blue text-xs font-bold border hm-border-blue">
+                {categories[activeTab].tag}
+              </span>
+              <span className="text-xs hm-text-muted font-medium">
+                100% Paperless Digital e-KYC
+              </span>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl font-black hm-text-ink">
+              {categories[activeTab].title}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300">
+
+            <p className="text-xs sm:text-sm hm-text-ink-soft leading-relaxed font-normal">
               {categories[activeTab].desc}
             </p>
+
+            <div className="flex flex-wrap items-center gap-4 text-xs hm-text-ink-soft pt-1">
+              <div>
+                <span className="hm-text-muted block text-[10px] font-semibold">Verification</span>
+                <strong className="hm-text-ink font-bold">Instant DigiLocker e-KYC</strong>
+              </div>
+              <div className="border-l hm-border-rule pl-4">
+                <span className="hm-text-muted block text-[10px] font-semibold">Repayment Type</span>
+                <strong className="hm-text-blue font-bold">Single Bullet on salary schedule</strong>
+              </div>
+            </div>
           </div>
 
-          <a
-            href="https://apply.credit91.com"
-            className="w-full md:w-auto px-6 py-3.5 rounded-xl bg-[#00C9A7] hover:bg-[#00B4D8] text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-colors whitespace-nowrap shadow-md text-center"
-          >
-            <span>Apply for {categories[activeTab].title}</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
+          <div className="flex flex-col sm:flex-row md:flex-col gap-2.5 flex-shrink-0">
+            <a
+              href="https://apply.credit91.com"
+              className="min-h-[48px] px-6 py-3.5 rounded-xl hm-primary hm-hover-primary active:scale-[0.99] hm-text-paper font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md hm-shadow-primary transition-colors text-center"
+            >
+              <span>Apply for {categories[activeTab].title}</span>
+              <ArrowRight className="w-4 h-4 hm-text-coral" />
+            </a>
+            <span className="text-[10px] text-center hm-text-muted font-medium">
+              No bureau check without OTP
+            </span>
+          </div>
         </div>
 
       </div>

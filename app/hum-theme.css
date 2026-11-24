@@ -1,0 +1,116 @@
+/* Hallmark · shape: project system · genre: playful · theme: Hum (by request) · redesign: restyle · job: apply · nav: card-stock bar · footer: ink directory · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: S, a global reskin can flatten route identity; fixed by assigning each Hum accent one stable job */
+@import url("https://api.fontshare.com/v2/css?f[]=chillax@500,600&display=swap");
+
+:root {
+  --hm-paper: oklch(97% 0.012 95);
+  --hm-paper-soft: oklch(94.5% 0.018 95);
+  --hm-paper-deep: oklch(91% 0.022 95);
+  --hm-card: oklch(98.8% 0.007 95);
+  --hm-ink: oklch(20% 0.014 255);
+  --hm-ink-soft: oklch(29% 0.014 255);
+  --hm-muted: oklch(45% 0.014 255);
+  --hm-rule: oklch(83% 0.025 92);
+  --hm-pear: oklch(87% 0.175 96);
+  --hm-pear-soft: oklch(93% 0.08 96);
+  --hm-pear-edge: oklch(72% 0.16 92);
+  --hm-blue: oklch(48% 0.17 250);
+  --hm-blue-soft: oklch(91% 0.05 250);
+  --hm-coral: oklch(70% 0.2 22);
+  --hm-coral-soft: oklch(92% 0.045 22);
+  --hm-mint: oklch(82% 0.15 152);
+  --hm-mint-soft: oklch(93% 0.04 152);
+  --hm-focus: oklch(48% 0.17 250);
+  --hm-shadow: oklch(20% 0.014 255 / 0.18);
+  --hm-shadow-soft: oklch(20% 0.014 255 / 0.08);
+  --hm-overlay: oklch(20% 0.014 255 / 0.7);
+  --hm-font: "Chillax", ui-rounded, ui-sans-serif, sans-serif;
+}
+
+html, body { overflow-x: clip; }
+
+.hum-site {
+  background: var(--hm-paper);
+  color: var(--hm-ink);
+  font-family: var(--hm-font);
+  font-weight: 500;
+}
+
+.hum-site :where(button, input, select, textarea) { font-family: var(--hm-font); }
+.hum-site :where(h1, h2, h3, h4, h5, h6) { color: inherit; font-family: var(--hm-font); font-weight: 600; letter-spacing: -0.025em; text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
+.hum-site :where(a, button, input, select, textarea, summary):focus-visible { outline: 0.2rem solid var(--hm-focus); outline-offset: 0.18rem; }
+.hum-site :where(button, input, select, textarea):disabled { opacity: 0.55; cursor: not-allowed; translate: none; }
+
+.hm-bg-paper { background-color: var(--hm-paper) !important; }
+.hm-bg-paper-soft { background-color: var(--hm-paper-soft) !important; }
+.hm-bg-paper-deep { background-color: var(--hm-paper-deep) !important; }
+.hm-bg-card { background-color: var(--hm-card) !important; }
+.hm-bg-ink { background-color: var(--hm-ink) !important; }
+.hm-bg-ink-soft { background-color: var(--hm-ink-soft) !important; }
+.hm-bg-pear { background-color: var(--hm-pear) !important; }
+.hm-bg-pear-soft { background-color: var(--hm-pear-soft) !important; }
+.hm-bg-blue-soft { background-color: var(--hm-blue-soft) !important; }
+.hm-bg-blue { background-color: var(--hm-blue) !important; }
+.hm-bg-coral { background-color: var(--hm-coral) !important; }
+.hm-bg-coral-soft { background-color: var(--hm-coral-soft) !important; }
+.hm-bg-mint { background-color: var(--hm-mint) !important; }
+.hm-bg-mint-soft { background-color: var(--hm-mint-soft) !important; }
+.hm-bg-overlay { background-color: var(--hm-overlay) !important; }
+
+.hm-text-ink { color: var(--hm-ink) !important; }
+.hm-text-ink-soft { color: var(--hm-ink-soft) !important; }
+.hm-text-muted { color: var(--hm-muted) !important; }
+.hm-text-paper { color: var(--hm-paper) !important; }
+.hm-text-paper-soft { color: var(--hm-paper-deep) !important; }
+.hm-text-blue { color: var(--hm-blue) !important; }
+.hm-text-coral { color: var(--hm-coral) !important; }
+.hm-text-mint { color: var(--hm-mint) !important; }
+.hm-fill-coral { fill: var(--hm-coral) !important; }
+.hm-accent-blue { accent-color: var(--hm-blue); }
+
+.hm-border-rule { border-color: var(--hm-rule) !important; }
+.hm-border-ink { border-color: var(--hm-ink-soft) !important; }
+.hm-border-blue { border-color: var(--hm-blue) !important; }
+.hm-border-pear { border-color: var(--hm-pear-edge) !important; }
+.hm-border-mint { border-color: var(--hm-mint) !important; }
+.hm-border-paper { border-color: var(--hm-paper) !important; }
+.hm-divide-rule > :not([hidden]) ~ :not([hidden]) { border-color: var(--hm-rule) !important; }
+
+.hm-primary { background: var(--hm-pear) !important; color: var(--hm-ink) !important; border-color: var(--hm-pear-edge) !important; box-shadow: 0 0.3rem 0 var(--hm-pear-edge), 0 0.8rem 1.25rem -0.75rem var(--hm-shadow) !important; translate: 0 0; transition: translate 120ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 120ms cubic-bezier(0.22, 1, 0.36, 1), background-color 220ms cubic-bezier(0.22, 1, 0.36, 1) !important; }
+.hm-primary:hover, .hm-hover-primary:hover { background: var(--hm-pear) !important; color: var(--hm-ink) !important; translate: 0 -0.12rem; box-shadow: 0 0.42rem 0 var(--hm-pear-edge), 0 0.9rem 1.4rem -0.7rem var(--hm-shadow) !important; }
+.hm-primary:active { translate: 0 0.2rem; box-shadow: 0 0.08rem 0 var(--hm-pear-edge) !important; }
+.hm-link, .hm-link-hover:hover { color: var(--hm-blue) !important; }
+.hm-hover-paper:hover { background-color: var(--hm-paper-deep) !important; }
+.hm-hover-card:hover { background-color: var(--hm-card) !important; }
+.hm-hover-ink:hover { color: var(--hm-ink) !important; }
+.hm-hover-blue-soft:hover { background-color: var(--hm-blue-soft) !important; }
+.hm-hover-border-blue:hover { border-color: var(--hm-blue) !important; }
+.hm-hover-ink-bg:hover { background-color: var(--hm-ink-soft) !important; }
+.hm-hover-mint:hover { background-color: var(--hm-mint) !important; color: var(--hm-ink) !important; }
+.hm-hover-text-paper:hover { color: var(--hm-paper) !important; }
+.hm-hover-ink-soft:hover { color: var(--hm-ink-soft) !important; }
+.hm-active-blue-soft:active { background-color: var(--hm-blue-soft) !important; }
+.hm-active-paper:active { background-color: var(--hm-paper-deep) !important; }
+.hm-focus-border:focus, .hm-focus-within-border:focus-within { border-color: var(--hm-blue) !important; }
+.group:hover .hm-group-text-blue { color: var(--hm-blue) !important; }
+.group:hover .hm-group-text-paper { color: var(--hm-paper) !important; }
+.group:hover .hm-group-bg-pear { background-color: var(--hm-pear) !important; }
+.group:hover .hm-group-border-blue { border-color: var(--hm-blue) !important; }
+.hm-focus:focus-visible { outline: 0.2rem solid var(--hm-focus) !important; outline-offset: 0.18rem; }
+
+.hm-shadow { box-shadow: 0 0.35rem 0 var(--hm-rule), 0 1rem 2rem -1.4rem var(--hm-shadow) !important; }
+.hm-shadow-primary { box-shadow: 0 0.3rem 0 var(--hm-pear-edge), 0 0.8rem 1.25rem -0.75rem var(--hm-shadow) !important; }
+.hm-rounded { border-radius: 0.875rem !important; }
+.hm-rounded-card { border-radius: 1.5rem !important; }
+.hm-no-gradient { background-image: none !important; }
+
+.hum-site header.sticky { background-color: color-mix(in oklab, var(--hm-pear-soft) 96%, transparent) !important; border-color: var(--hm-pear-edge) !important; box-shadow: 0 0.3rem 0 var(--hm-paper-deep) !important; }
+.hum-site footer { background-color: #f8fafc !important; color: #475569 !important; border-color: #e2e8f0 !important; }
+.hum-site footer :where(h2, h3, h4, .hm-footer-head) { color: #0f172a !important; }
+.hum-site footer a { color: #475569 !important; }
+.hum-site footer a:hover { color: #2563eb !important; }
+.hum-site ::selection { background: var(--hm-pear); color: var(--hm-ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hum-site *, .hum-site *::before, .hum-site *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

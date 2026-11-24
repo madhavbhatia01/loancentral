@@ -1,30 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import MobileStickyCTA from "./MobileStickyCTA";
 
 export default function ClientLayoutWrapper({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const handleApplyRedirect = () => {
     window.location.href = "https://apply.credit91.com";
   };
 
   return (
-    <>
-      <Navbar onApplyClick={handleApplyRedirect} />
-      <main className="flex-grow">
-        {React.Children.map(children, (child) => {
-          if (React.isValidElement(child)) {
-            return React.cloneElement(child, { onApplyClick: handleApplyRedirect } as any);
-          }
-          return child;
-        })}
-      </main>
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+      {/* 1. Sticky Header with Accessible Mobile Drawer */}
+      <Navbar onApplyClick={handleApplyRedirect} onMenuToggle={setIsMenuOpen} />
+
+      {/* Main Content Sections */}
+      <main className="flex-grow w-full overflow-x-hidden">{children}</main>
+
+      {/* 16. Footer */}
       <Footer />
-    </>
+
+      {/* 17. Mobile Sticky Application Bar (Hidden when drawer is open) */}
+      <MobileStickyCTA onApplyClick={handleApplyRedirect} isMenuOpen={isMenuOpen} />
+    </div>
   );
 }

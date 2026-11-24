@@ -6,66 +6,102 @@
   :root {
     --background: 210 40% 98%;
     --foreground: 222 47% 11%;
-    --font-inter: 'Inter', system-ui, sans-serif;
-    --font-outfit: 'Outfit', system-ui, sans-serif;
+    --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-outfit: 'Outfit', system-ui, -apple-system, sans-serif;
   }
 
   html {
     scroll-behavior: smooth;
     font-family: var(--font-inter);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
-    background-color: #f8fafc;
-    color: #0f172a;
-    overflow-x: hidden;
+    background-color: var(--hm-paper);
+    color: var(--hm-ink);
+    overflow-x: clip;
+    min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
 
-/* Custom Animation Utilities */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+/* Custom Animation Utilities (Lightweight CSS, no external JS libraries) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; filter: blur(20px); }
-  50% { opacity: 0.8; filter: blur(30px); }
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
 }
 
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
 
-.animate-pulse-glow {
-  animation: pulseGlow 6s ease-in-out infinite;
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+.animate-slideInRight {
+  animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes reviewsMarquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-reviews-marquee {
+  display: flex;
+  width: max-content;
+  animation: reviewsMarquee 36s linear infinite;
+}
+
+.animate-reviews-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Restrained modern glassmorphism */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  background-color: var(--hm-card);
+  border: 1px solid var(--hm-rule);
 }
 
-.dark-glass-panel {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(30, 41, 59, 0.8);
+@supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
+  .glass-panel {
+    background: var(--hm-card);
+  }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--hm-paper-soft);
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--hm-rule);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0d9488;
+  background: var(--hm-blue);
+}
+
+/* Safe Area Inset Helpers */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
 }

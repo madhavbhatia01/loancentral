@@ -1,0 +1,29 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "page",
+  "shape": "Workbench",
+  "theme": "Hum",
+  "genre": "playful",
+  "hero": "Stage",
+  "nav": "project chrome",
+  "footer": "project chrome",
+  "imagery": "existing Delhi hero",
+  "entry": "/personal-loan-in-delhi",
+  "sections": [
+   "offer",
+   "eligibility",
+   "verification",
+   "estimator",
+   "protection",
+   "faqs",
+   "apply",
+   "disclosure"
+  ],
+  "signature": "salary-aligned offer on pressable card stock",
+  "waived": [],
+  "prompt": "Loan Central Delhi personal loan page in the Loop showcase theme",
+  "date": "2026-11-23"
+ }
+]
