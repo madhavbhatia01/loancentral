@@ -175,12 +175,6 @@ export default function WomenLoanPage({
                     </span>
                     <span className="text-[11px] font-bold text-slate-800">Documents Verified</span>
                   </div>
-
-                  {/* Landmark Tag */}
-                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-[11px] font-medium text-slate-800 bg-white/95 backdrop-blur-xs px-3 py-1 rounded-lg border border-slate-200 shadow-xs">
-                    <MapPin className="w-3 h-3 text-red-600" />
-                    <span>{activeLandmark}, {cityName}</span>
-                  </div>
                 </div>
 
                 {/* Sub-caption Pill */}

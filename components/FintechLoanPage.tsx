@@ -314,9 +314,6 @@ export default function FintechLoanPage({
                         sizes="(max-width: 768px) 100vw, 360px"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute top-2.5 right-2.5 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-lg text-[10px] font-bold text-slate-800 shadow-xs">
-                        {c.landmark}
-                      </div>
                     </div>
 
                     <div>

@@ -104,7 +104,7 @@ html, body { overflow-x: clip; }
 .hm-rounded-card { border-radius: 1.5rem !important; }
 .hm-no-gradient { background-image: none !important; }
 
-.hum-site header.sticky { background-color: color-mix(in oklab, var(--hm-pear-soft) 96%, transparent) !important; border-color: var(--hm-pear-edge) !important; box-shadow: 0 0.3rem 0 var(--hm-paper-deep) !important; }
+.hum-site header.sticky { background-color: #ffffff !important; border-color: #e2e8f0 !important; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06) !important; }
 .hum-site footer { background-color: #f8fafc !important; color: #475569 !important; border-color: #e2e8f0 !important; }
 .hum-site footer :where(h2, h3, h4, .hm-footer-head) { color: #0f172a !important; }
 .hum-site footer a { color: #475569 !important; }
