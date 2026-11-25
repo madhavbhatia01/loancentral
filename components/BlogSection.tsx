@@ -107,7 +107,7 @@ export default function BlogSection() {
 
                     {/* Title */}
                     <h3 className="text-base sm:text-lg font-bold hm-text-ink hm-group-text-blue transition-colors line-clamp-2 sm:line-clamp-3 leading-snug">
-                      <a href="https://apply.credit91.com" className="focus:outline-none">
+                      <a href="https://apply.credit91.com?utm_source=loancentral&utm_medium=website&utm_campaign=blog_cta" className="focus:outline-none">
                         <span className="absolute inset-0" aria-hidden="true" />
                         {post.title}
                       </a>

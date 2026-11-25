@@ -53,7 +53,7 @@ export default function DelhiPageContent() {
         cityName="Delhi NCR"
         stateName="Delhi"
         landmark="India Gate"
-        heroImageSrc="/images/delhi-hero.webp"
+        heroImageSrc="/images/cities/delhi-hero.webp"
         highlights={delhiHighlights}
         popularSectors={delhiSectors}
         faqs={delhiFaqs}

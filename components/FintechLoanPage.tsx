@@ -66,7 +66,7 @@ export default function FintechLoanPage({
     if (onApplyClick) {
       onApplyClick();
     } else {
-      window.location.href = "https://apply.credit91.com";
+      window.location.href = `https://apply.credit91.com?utm_source=loancentral&utm_medium=website&utm_campaign=${encodeURIComponent(pageType)}`;
     }
   };
 

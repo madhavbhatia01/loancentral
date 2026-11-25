@@ -63,7 +63,7 @@ export default function ProcessSection({ onApplyClick }: ProcessSectionProps) {
             return (
               <a
                 key={idx}
-                href="https://apply.credit91.com"
+                href="https://apply.credit91.com?utm_source=loancentral&utm_medium=website&utm_campaign=process_cta"
                 className="p-5 sm:p-6 rounded-2xl hm-bg-paper-soft border hm-border-rule hm-hover-border-blue hm-hover-blue-soft hover:shadow-md transition-colors duration-200 group flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-3.5">

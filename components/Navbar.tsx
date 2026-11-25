@@ -96,7 +96,7 @@ export default function Navbar({ onApplyClick, onMenuToggle }: NavbarProps) {
           {/* Desktop Action CTA: Royal Blue with Amber Glow */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="https://apply.credit91.com"
+              href="https://apply.credit91.com?utm_source=loancentral&utm_medium=website&utm_campaign=navbar_cta"
               className="group relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full hm-primary hm-hover-primary active:scale-[0.99] hm-text-paper font-bold text-sm shadow-md hm-shadow-primary transition-colors hover:scale-[1.02] focus-visible:outline-2 hm-focus"
             >
               <span>Apply now</span>
@@ -107,7 +107,7 @@ export default function Navbar({ onApplyClick, onMenuToggle }: NavbarProps) {
           {/* Mobile Actions: Compact Apply button + Menu toggle */}
           <div className="flex lg:hidden items-center gap-2">
             <a
-              href="https://apply.credit91.com"
+              href="https://apply.credit91.com?utm_source=loancentral&utm_medium=website&utm_campaign=navbar_cta"
               className="inline-flex items-center justify-center min-h-[38px] px-3.5 py-1.5 rounded-full hm-primary hm-text-paper text-xs font-black shadow-xs active:scale-95 transition-transform"
               aria-label="Apply for loan"
             >
@@ -255,7 +255,7 @@ export default function Navbar({ onApplyClick, onMenuToggle }: NavbarProps) {
             {/* Bottom Actions & Separated Legal Links */}
             <div className="p-5 border-t hm-border-rule hm-bg-paper-soft space-y-4">
               <a
-                href="https://apply.credit91.com"
+                href="https://apply.credit91.com?utm_source=loancentral&utm_medium=website&utm_campaign=navbar_cta"
                 onClick={() => setMobileMenuOpen(false)}
                 className="min-h-[48px] w-full py-3.5 px-4 rounded-xl hm-primary hm-hover-primary active:scale-[0.99] hm-text-paper font-black text-sm flex items-center justify-center gap-2 shadow-md hm-shadow-primary transition-colors text-center"
               >

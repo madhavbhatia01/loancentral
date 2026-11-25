@@ -1,0 +1,13 @@
+# LoanCentral
+
+LoanCentral is an informational digital credit discovery platform for salaried professionals in India.
+
+## Key Sections
+- Home: https://loancentral.in/
+- Loans by Cities Hub: https://loancentral.in/loans-by-cities
+- Personal Loan Hub: https://loancentral.in/personal-loan
+- Personal Loan for Women: https://loancentral.in/personal-loan-for-women
+- About & Editorial Standards: https://loancentral.in/about
+
+## Compliance Note
+Loan approval, interest rate, and terms depend on the lender and the applicant's profile. All content is informational only.

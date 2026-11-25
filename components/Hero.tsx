@@ -82,7 +82,7 @@ export default function Hero({ onApplyClick }: HeroProps) {
             {/* Primary CTA */}
             <div id="hero-cta-marker" className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <a
-                href="https://apply.credit91.com"
+                href="https://apply.credit91.com?utm_source=loancentral&utm_medium=website&utm_campaign=hero_cta"
                 className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-3 px-8 py-3.5 text-base font-black hm-text-paper hm-primary hm-hover-primary active:scale-[0.99] rounded-xl shadow-lg hm-shadow-primary transition-colors text-center"
               >
                 <span>Check Your Offer</span>

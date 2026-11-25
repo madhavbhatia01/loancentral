@@ -1,0 +1,448 @@
+export type CityRegion = "North" | "West" | "South" | "East" | "Central";
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface City {
+  slug: string;
+  name: string;
+  state: string;
+  landmark: string;
+  region: CityRegion;
+  nearbyCities: [string, string, string];
+  localAngles: {
+    employers: string;
+    commuteAndLiving: string;
+    neighbourhoods: string;
+    commonNeeds: string;
+  };
+}
+
+export const CITIES: City[] = [
+  {
+    slug: "delhi",
+    name: "Delhi",
+    state: "Delhi NCR",
+    landmark: "India Gate",
+    region: "North",
+    nearbyCities: ["faridabad", "meerut", "agra"],
+    localAngles: {
+      employers: "central government ministries, PSU offices, Connaught Place corporate firms, and media houses",
+      commuteAndLiving: "long Metro commutes across the Yellow and Blue lines alongside rented apartments in South and West Delhi",
+      neighbourhoods: "Saket, Dwarka, Rohini, Laxmi Nagar, and Janakpuri",
+      commonNeeds: "medical bills, seasonal family travel, rental deposits, and short-term household repairs",
+    },
+  },
+  {
+    slug: "mumbai",
+    name: "Mumbai",
+    state: "Maharashtra",
+    landmark: "Gateway of India",
+    region: "West",
+    nearbyCities: ["thane", "pune", "nashik"],
+    localAngles: {
+      employers: "BKC financial institutions, Nariman Point consultancies, Lower Parel media agencies, and Andheri tech parks",
+      commuteAndLiving: "suburban rail and Metro commutes paired with high-deposit rented flats across the western and central suburbs",
+      neighbourhoods: "Andheri, Bandra, Powai, Dadar, and Borivali",
+      commonNeeds: "monsoon home repairs, rental security deposits, family medical care, and wedding expenses",
+    },
+  },
+  {
+    slug: "bengaluru",
+    name: "Bengaluru",
+    state: "Karnataka",
+    landmark: "Vidhana Soudha",
+    region: "South",
+    nearbyCities: ["chennai", "hyderabad", "kochi"],
+    localAngles: {
+      employers: "Outer Ring Road software campuses, Whitefield IT parks, Electronic City engineering teams, and Koramangala startups",
+      commuteAndLiving: "tech-corridor commutes and shared or family rentals near major ITSEZ hubs",
+      neighbourhoods: "Whitefield, Indiranagar, Koramangala, HSR Layout, and Yelahanka",
+      commonNeeds: "relocation deposits, upskilling courses, family health emergencies, and home setup costs",
+    },
+  },
+  {
+    slug: "hyderabad",
+    name: "Hyderabad",
+    state: "Telangana",
+    landmark: "Charminar",
+    region: "South",
+    nearbyCities: ["visakhapatnam", "bengaluru", "nagpur"],
+    localAngles: {
+      employers: "HITEC City software firms, Gachibowli financial campuses, and Genome Valley pharmaceutical companies",
+      commuteAndLiving: "Outer Ring Road and Metro travel between older residential quarters and western IT corridors",
+      neighbourhoods: "Madhapur, Kondapur, Kukatpally, Banjara Hills, and Secunderabad",
+      commonNeeds: "family celebrations, medical treatments, vehicle upkeep, and education fees",
+    },
+  },
+  {
+    slug: "chennai",
+    name: "Chennai",
+    state: "Tamil Nadu",
+    landmark: "Chennai Central",
+    region: "South",
+    nearbyCities: ["bengaluru", "coimbatore", "visakhapatnam"],
+    localAngles: {
+      employers: "OMR IT corridor companies, Ambattur and Sriperumbudur automotive plants, and Guindy industrial estates",
+      commuteAndLiving: "coastal suburban train and Metro commutes with steady family-oriented residential neighbourhoods",
+      neighbourhoods: "Velachery, Adyar, Anna Nagar, T. Nagar, and Tambaram",
+      commonNeeds: "higher education fees, family weddings, medical care, and home renovation",
+    },
+  },
+  {
+    slug: "kolkata",
+    name: "Kolkata",
+    state: "West Bengal",
+    landmark: "Howrah Bridge",
+    region: "East",
+    nearbyCities: ["patna", "guwahati", "visakhapatnam"],
+    localAngles: {
+      employers: "Salt Lake Sector V IT offices, New Town business parks, and Dalhousie commercial establishments",
+      commuteAndLiving: "Metro, tram, and ferry commutes connecting North and South Kolkata with eastern tech hubs",
+      neighbourhoods: "Salt Lake, New Town, Ballygunge, Behala, and Dum Dum",
+      commonNeeds: "festive family expenses, medical bills, home maintenance, and education support",
+    },
+  },
+  {
+    slug: "pune",
+    name: "Pune",
+    state: "Maharashtra",
+    landmark: "Shaniwar Wada",
+    region: "West",
+    nearbyCities: ["mumbai", "thane", "nashik"],
+    localAngles: {
+      employers: "Hinjewadi IT Park, Magarpatta City, Kharadi EON Free Zone, and Pimpri-Chinchwad automotive plants",
+      commuteAndLiving: "two-wheeler and Metro commutes between university-adjacent neighbourhoods and eastern/western tech parks",
+      neighbourhoods: "Kothrud, Wakad, Baner, Viman Nagar, and Hadapsar",
+      commonNeeds: "rented flat furnishing, upskilling courses, family travel, and urgent medical needs",
+    },
+  },
+  {
+    slug: "ahmedabad",
+    name: "Ahmedabad",
+    state: "Gujarat",
+    landmark: "Sabarmati Riverfront",
+    region: "West",
+    nearbyCities: ["vadodara", "surat", "rajkot"],
+    localAngles: {
+      employers: "SG Highway corporate offices, pharmaceutical headquarters, textile houses, and GIFT City financial firms",
+      commuteAndLiving: "BRTS and Metro corridors linking western residential areas with commercial zones",
+      neighbourhoods: "Satellite, Prahlad Nagar, Navrangpura, Bopal, and Maninagar",
+      commonNeeds: "wedding ceremonies, home repairs, medical bills, and family education",
+    },
+  },
+  {
+    slug: "jaipur",
+    name: "Jaipur",
+    state: "Rajasthan",
+    landmark: "Hawa Mahal",
+    region: "North",
+    nearbyCities: ["delhi", "agra", "faridabad"],
+    localAngles: {
+      employers: "Sitapura industrial area, Malviya Nagar corporate offices, hospitality chains, and state government departments",
+      commuteAndLiving: "blending heritage neighbourhoods with expanding southern and western residential colonies",
+      neighbourhoods: "Malviya Nagar, Vaishali Nagar, Mansarovar, C-Scheme, and Jagatpura",
+      commonNeeds: "family weddings, home renovation, medical emergencies, and seasonal travel",
+    },
+  },
+  {
+    slug: "lucknow",
+    name: "Lucknow",
+    state: "Uttar Pradesh",
+    landmark: "Bara Imambara",
+    region: "North",
+    nearbyCities: ["kanpur", "varanasi", "agra"],
+    localAngles: {
+      employers: "Gomti Nagar corporate offices, state administration, healthcare centres, and educational institutions",
+      commuteAndLiving: "Metro and ring-road commutes across expanding eastern and northern residential sectors",
+      neighbourhoods: "Gomti Nagar, Hazratganj, Indira Nagar, Aliganj, and Alambagh",
+      commonNeeds: "medical treatment, wedding arrangements, home repair, and children's education",
+    },
+  },
+  {
+    slug: "surat",
+    name: "Surat",
+    state: "Gujarat",
+    landmark: "Surat Castle",
+    region: "West",
+    nearbyCities: ["vadodara", "ahmedabad", "nashik"],
+    localAngles: {
+      employers: "diamond processing units, textile trading houses, Hazira industrial belt, and Adajan commercial offices",
+      commuteAndLiving: "BRTS corridors and bridge-connected neighbourhoods along the Tapi river",
+      neighbourhoods: "Adajan, Vesu, Piplod, Varachha, and Athwa",
+      commonNeeds: "family functions, home upgrades, medical bills, and short-term household cash flow",
+    },
+  },
+  {
+    slug: "kanpur",
+    name: "Kanpur",
+    state: "Uttar Pradesh",
+    landmark: "JK Temple",
+    region: "North",
+    nearbyCities: ["lucknow", "agra", "varanasi"],
+    localAngles: {
+      employers: "leather and textile manufacturing units, engineering workshops, banks, and educational campuses",
+      commuteAndLiving: "daily travel between established civil lines neighbourhoods and industrial estates",
+      neighbourhoods: "Swaroop Nagar, Kakadeo, Kidwai Nagar, Govind Nagar, and Kalyanpur",
+      commonNeeds: "medical expenses, family weddings, education fees, and home repairs",
+    },
+  },
+  {
+    slug: "nagpur",
+    name: "Nagpur",
+    state: "Maharashtra",
+    landmark: "Deekshabhoomi",
+    region: "Central",
+    nearbyCities: ["bhopal", "indore", "hyderabad"],
+    localAngles: {
+      employers: "MIHAN SEZ aviation and IT firms, Hingna industrial estate, and central government regional offices",
+      commuteAndLiving: "Nagpur Metro commutes connecting residential colonies with southern SEZ hubs",
+      neighbourhoods: "Dharampeth, Sitabuldi, Civil Lines, Manish Nagar, and Wardha Road",
+      commonNeeds: "home renovation, medical care, education fees, and family travel",
+    },
+  },
+  {
+    slug: "indore",
+    name: "Indore",
+    state: "Madhya Pradesh",
+    landmark: "Rajwada Palace",
+    region: "Central",
+    nearbyCities: ["bhopal", "nagpur", "vadodara"],
+    localAngles: {
+      employers: "Vijay Nagar corporate towers, Pithampur industrial belt, Super Corridor IT campuses, and coaching institutes",
+      commuteAndLiving: "iBus BRTS and ring-road commutes across clean, fast-growing residential townships",
+      neighbourhoods: "Vijay Nagar, Palasia, Bhawarkua, Rau, and Nipania",
+      commonNeeds: "education expenses, family weddings, medical bills, and home improvement",
+    },
+  },
+  {
+    slug: "bhopal",
+    name: "Bhopal",
+    state: "Madhya Pradesh",
+    landmark: "Upper Lake",
+    region: "Central",
+    nearbyCities: ["indore", "nagpur", "lucknow"],
+    localAngles: {
+      employers: "state government secretariats, BHEL manufacturing township, MP Nagar offices, and university campuses",
+      commuteAndLiving: "calm lakeside commutes between Old Bhopal, Arera Colony, and Hoshangabad Road",
+      neighbourhoods: "Arera Colony, MP Nagar, Kolar Road, Shahpura, and Bairagarh",
+      commonNeeds: "medical care, home repairs, family weddings, and education support",
+    },
+  },
+  {
+    slug: "patna",
+    name: "Patna",
+    state: "Bihar",
+    landmark: "Golghar",
+    region: "East",
+    nearbyCities: ["varanasi", "kolkata", "lucknow"],
+    localAngles: {
+      employers: "state administration offices, Bailey Road commercial centres, hospitals, and coaching institutes",
+      commuteAndLiving: "daily travel along Boring Road, Kankarbagh, and Bailey Road corridors",
+      neighbourhoods: "Boring Road, Kankarbagh, Rajendra Nagar, Patliputra Colony, and Danapur",
+      commonNeeds: "children's education, medical emergencies, family weddings, and home repairs",
+    },
+  },
+  {
+    slug: "vadodara",
+    name: "Vadodara",
+    state: "Gujarat",
+    landmark: "Laxmi Vilas Palace",
+    region: "West",
+    nearbyCities: ["ahmedabad", "surat", "indore"],
+    localAngles: {
+      employers: "petrochemical complexes, engineering plants, Alkapuri corporate offices, and university departments",
+      commuteAndLiving: "short cross-city commutes between tree-lined residential societies and industrial corridors",
+      neighbourhoods: "Alkapuri, Akota, Gotri, Manjalpur, and Karelibaug",
+      commonNeeds: "home maintenance, family weddings, medical bills, and education fees",
+    },
+  },
+  {
+    slug: "ludhiana",
+    name: "Ludhiana",
+    state: "Punjab",
+    landmark: "Clock Tower",
+    region: "North",
+    nearbyCities: ["chandigarh", "delhi", "meerut"],
+    localAngles: {
+      employers: "apparel and hosiery mills, bicycle and auto-parts factories, and Ferozepur Road commercial offices",
+      commuteAndLiving: "daily travel between established Model Town neighbourhoods and Focal Point industrial zones",
+      neighbourhoods: "Sarabha Nagar, Model Town, Civil Lines, BRS Nagar, and Dugri",
+      commonNeeds: "family celebrations, medical care, home repairs, and seasonal travel",
+    },
+  },
+  {
+    slug: "chandigarh",
+    name: "Chandigarh",
+    state: "Chandigarh",
+    landmark: "Rock Garden",
+    region: "North",
+    nearbyCities: ["ludhiana", "delhi", "faridabad"],
+    localAngles: {
+      employers: "IT Park Rajiv Gandhi Technology Park, Punjab and Haryana government offices, and healthcare institutes",
+      commuteAndLiving: "planned sector-based commutes across Chandigarh, Mohali, and Panchkula",
+      neighbourhoods: "Sector 17, Sector 22, Sector 35, Manimajra, and Sector 44",
+      commonNeeds: "medical bills, home renovation, family travel, and education expenses",
+    },
+  },
+  {
+    slug: "coimbatore",
+    name: "Coimbatore",
+    state: "Tamil Nadu",
+    landmark: "Marudamalai",
+    region: "South",
+    nearbyCities: ["kochi", "chennai", "bengaluru"],
+    localAngles: {
+      employers: "TIDEL Park IT firms, precision engineering workshops, textile mills, and hospital networks",
+      commuteAndLiving: "steady Avinashi Road commutes between residential layouts and manufacturing hubs",
+      neighbourhoods: "RS Puram, Peelamedu, Gandhipuram, Saibaba Colony, and Race Course",
+      commonNeeds: "education fees, medical treatment, home repairs, and family weddings",
+    },
+  },
+  {
+    slug: "kochi",
+    name: "Kochi",
+    state: "Kerala",
+    landmark: "Chinese Fishing Nets",
+    region: "South",
+    nearbyCities: ["coimbatore", "bengaluru", "chennai"],
+    localAngles: {
+      employers: "Infopark Kakkanad tech companies, Cochin Shipyard, port logistics firms, and healthcare centres",
+      commuteAndLiving: "Kochi Metro and ferry commutes linking island neighbourhoods with Kakkanad IT parks",
+      neighbourhoods: "Kakkanad, Edappally, Panampilly Nagar, Kaloor, and Fort Kochi",
+      commonNeeds: "monsoon home repairs, medical care, family travel, and education support",
+    },
+  },
+  {
+    slug: "visakhapatnam",
+    name: "Visakhapatnam",
+    state: "Andhra Pradesh",
+    landmark: "RK Beach",
+    region: "South",
+    nearbyCities: ["hyderabad", "chennai", "kolkata"],
+    localAngles: {
+      employers: "Visakhapatnam Steel Plant, Rushikonda IT Park, naval dockyard, and port logistics firms",
+      commuteAndLiving: "coastal highway commutes connecting Beach Road neighbourhoods with industrial corridors",
+      neighbourhoods: "MVP Colony, Seethammadhara, Madhurawada, Gajuwaka, and Dwaraka Nagar",
+      commonNeeds: "home repairs, medical bills, family weddings, and education expenses",
+    },
+  },
+  {
+    slug: "agra",
+    name: "Agra",
+    state: "Uttar Pradesh",
+    landmark: "Taj Mahal",
+    region: "North",
+    nearbyCities: ["delhi", "jaipur", "kanpur"],
+    localAngles: {
+      employers: "hospitality and tourism businesses, footwear manufacturing units, and Sanjay Place commercial offices",
+      commuteAndLiving: "daily commutes between older city markets and expanding Dayalbagh and Sikandra colonies",
+      neighbourhoods: "Kamla Nagar, Dayalbagh, Sikandra, Tajganj, and Shahganj",
+      commonNeeds: "medical emergencies, family weddings, home renovation, and education fees",
+    },
+  },
+  {
+    slug: "nashik",
+    name: "Nashik",
+    state: "Maharashtra",
+    landmark: "Panchavati",
+    region: "West",
+    nearbyCities: ["mumbai", "pune", "thane"],
+    localAngles: {
+      employers: "Satpur and Ambad MIDC manufacturing plants, agro-processing firms, and College Road commercial offices",
+      commuteAndLiving: "manageable cross-city commutes along the Godavari basin",
+      neighbourhoods: "College Road, Gangapur Road, Indira Nagar, Panchavati, and Nashik Road",
+      commonNeeds: "home repairs, medical care, family weddings, and education expenses",
+    },
+  },
+  {
+    slug: "faridabad",
+    name: "Faridabad",
+    state: "Haryana",
+    landmark: "Surajkund",
+    region: "North",
+    nearbyCities: ["delhi", "meerut", "agra"],
+    localAngles: {
+      employers: "industrial manufacturing sectors, Mathura Road corporate offices, and daily Metro commuters to Delhi",
+      commuteAndLiving: "Violet Line Metro commutes paired with spacious sector-based apartments",
+      neighbourhoods: "Sector 15, Sector 21C, NIT Faridabad, Neharpar, and Greenfields",
+      commonNeeds: "household repairs, medical bills, family weddings, and education fees",
+    },
+  },
+  {
+    slug: "meerut",
+    name: "Meerut",
+    state: "Uttar Pradesh",
+    landmark: "Augarnath Temple",
+    region: "North",
+    nearbyCities: ["delhi", "faridabad", "lucknow"],
+    localAngles: {
+      employers: "sports goods manufacturing, healthcare centres, educational campuses, and Delhi-NCR commuters",
+      commuteAndLiving: "rapid-rail and highway commutes connecting Meerut residential colonies with NCR hubs",
+      neighbourhoods: "Shastri Nagar, Ganga Nagar, Pallavpuram, Saket, and Civil Lines",
+      commonNeeds: "education fees, medical care, family weddings, and home repairs",
+    },
+  },
+  {
+    slug: "rajkot",
+    name: "Rajkot",
+    state: "Gujarat",
+    landmark: "Watson Museum",
+    region: "West",
+    nearbyCities: ["ahmedabad", "vadodara", "surat"],
+    localAngles: {
+      employers: "engineering and foundry units, Shapar-Veraval industrial belt, and Kalawad Road commercial offices",
+      commuteAndLiving: "BRTS and ring-road commutes across clean residential neighbourhoods",
+      neighbourhoods: "Kalawad Road, University Road, Nana Mava, Sadar, and Race Course",
+      commonNeeds: "family functions, medical expenses, home renovation, and education support",
+    },
+  },
+  {
+    slug: "varanasi",
+    name: "Varanasi",
+    state: "Uttar Pradesh",
+    landmark: "Dashashwamedh Ghat",
+    region: "North",
+    nearbyCities: ["lucknow", "patna", "kanpur"],
+    localAngles: {
+      employers: "Banaras Locomotive Works, university campuses, hospitality firms, and Sigra commercial offices",
+      commuteAndLiving: "daily travel between heritage ghat neighbourhoods and expanding Lanka and Sigra areas",
+      neighbourhoods: "Lanka, Sigra, Mahmoorganj, Bhelupur, and Shivpur",
+      commonNeeds: "medical care, family weddings, home repairs, and education expenses",
+    },
+  },
+  {
+    slug: "thane",
+    name: "Thane",
+    state: "Maharashtra",
+    landmark: "Upvan Lake",
+    region: "West",
+    nearbyCities: ["mumbai", "pune", "nashik"],
+    localAngles: {
+      employers: "Wagle Estate IT parks, Ghodbunder Road corporate offices, and Central Line commuters to Mumbai",
+      commuteAndLiving: "suburban rail and Eastern Express Highway commutes with lakeside residential complexes",
+      neighbourhoods: "Ghodbunder Road, Vartak Nagar, Majiwada, Naupada, and Hiranandani Estate",
+      commonNeeds: "rental deposits, home renovation, medical bills, and family travel",
+    },
+  },
+  {
+    slug: "guwahati",
+    name: "Guwahati",
+    state: "Assam",
+    landmark: "Kamakhya Temple",
+    region: "East",
+    nearbyCities: ["kolkata", "patna", "visakhapatnam"],
+    localAngles: {
+      employers: "GS Road corporate offices, public sector undertakings, oil and gas offices, and healthcare centres",
+      commuteAndLiving: "Brahmaputra-side commutes connecting Beltola, Zoo Road, and Jalukbari",
+      neighbourhoods: "GS Road, Beltola, Zoo Road, Six Mile, and Chandmari",
+      commonNeeds: "medical emergencies, family weddings, home repairs, and education fees",
+    },
+  },
+];
+
+export function getCityBySlug(slug: string): City | undefined {
+  return CITIES.find((c) => c.slug === slug);
+}

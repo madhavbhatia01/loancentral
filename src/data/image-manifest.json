@@ -1,0 +1,272 @@
+[
+  {
+    "slug": "delhi",
+    "filename": "/images/cities/delhi-hero.webp",
+    "hubFilename": "/images/cities/delhi-card.webp",
+    "sha256": "ef14392bcf3a93f73ff47d86e73f07cda6e41d89f64c5a026dd2221bd61bf0f1",
+    "personType": "Male salaried professional",
+    "landmark": "India Gate",
+    "prompt": "Realistic natural daylight photograph of an Indian Male salaried professional in delhi, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus India Gate background and no watermarks."
+  },
+  {
+    "slug": "mumbai",
+    "filename": "/images/cities/mumbai-hero.webp",
+    "hubFilename": "/images/cities/mumbai-card.webp",
+    "sha256": "3a4511bbc47b4c4a5b10e6b6fac80482b7eaffa1eff9d9ba12343250ee73977b",
+    "personType": "Female salaried professional",
+    "landmark": "Gateway of India",
+    "prompt": "Realistic natural daylight photograph of an Indian Female salaried professional in mumbai, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Gateway of India background and no watermarks."
+  },
+  {
+    "slug": "bengaluru",
+    "filename": "/images/cities/bengaluru-hero.webp",
+    "hubFilename": "/images/cities/bengaluru-card.webp",
+    "sha256": "f089c1ebb8163431ee370eb12571ff5cebea4ac1fd9db5b454f1515a06ded8ca",
+    "personType": "Young salaried couple",
+    "landmark": "Vidhana Soudha",
+    "prompt": "Realistic natural daylight photograph of an Indian Young salaried couple in bengaluru, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Vidhana Soudha background and no watermarks."
+  },
+  {
+    "slug": "hyderabad",
+    "filename": "/images/cities/hyderabad-hero.webp",
+    "hubFilename": "/images/cities/hyderabad-card.webp",
+    "sha256": "455e728ea3767c65e0c80bfe40c37ff8bf7450675f843edbfe43875758027d46",
+    "personType": "Small Indian family",
+    "landmark": "Charminar",
+    "prompt": "Realistic natural daylight photograph of an Indian Small Indian family in hyderabad, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Charminar background and no watermarks."
+  },
+  {
+    "slug": "chennai",
+    "filename": "/images/cities/chennai-hero.webp",
+    "hubFilename": "/images/cities/chennai-card.webp",
+    "sha256": "2d3806ec14e9a50640f2e72cdc33b1bf39aca8e6c56e5d13651b9f5c915f93d5",
+    "personType": "Male salaried professional",
+    "landmark": "Chennai Central",
+    "prompt": "Realistic natural daylight photograph of an Indian Male salaried professional in chennai, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Chennai Central background and no watermarks."
+  },
+  {
+    "slug": "kolkata",
+    "filename": "/images/cities/kolkata-hero.webp",
+    "hubFilename": "/images/cities/kolkata-card.webp",
+    "sha256": "db0cde1bfc13e8971a6772ace8daa52e71e0654d52edcc98064cad3c4971d778",
+    "personType": "Female salaried professional",
+    "landmark": "Howrah Bridge",
+    "prompt": "Realistic natural daylight photograph of an Indian Female salaried professional in kolkata, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Howrah Bridge background and no watermarks."
+  },
+  {
+    "slug": "pune",
+    "filename": "/images/cities/pune-hero.webp",
+    "hubFilename": "/images/cities/pune-card.webp",
+    "sha256": "3c302dd56f8c8b2f08bfd3192ed4b825cd991cd7c772f73a30220b5dc3e5530d",
+    "personType": "Young salaried couple",
+    "landmark": "Shaniwar Wada",
+    "prompt": "Realistic natural daylight photograph of an Indian Young salaried couple in pune, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Shaniwar Wada background and no watermarks."
+  },
+  {
+    "slug": "ahmedabad",
+    "filename": "/images/cities/ahmedabad-hero.webp",
+    "hubFilename": "/images/cities/ahmedabad-card.webp",
+    "sha256": "5189b935325c2bd761b52380c7c7f25b5b2ceb746caababa92068ca1ebf86317",
+    "personType": "Small Indian family",
+    "landmark": "Sabarmati Riverfront",
+    "prompt": "Realistic natural daylight photograph of an Indian Small Indian family in ahmedabad, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Sabarmati Riverfront background and no watermarks."
+  },
+  {
+    "slug": "jaipur",
+    "filename": "/images/cities/jaipur-hero.webp",
+    "hubFilename": "/images/cities/jaipur-card.webp",
+    "sha256": "b37d4005cf01d06dc1453dd5e856e5e152cebf0d7b49f092afe264804e9da13b",
+    "personType": "Male salaried professional",
+    "landmark": "Hawa Mahal",
+    "prompt": "Realistic natural daylight photograph of an Indian Male salaried professional in jaipur, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Hawa Mahal background and no watermarks."
+  },
+  {
+    "slug": "lucknow",
+    "filename": "/images/cities/lucknow-hero.webp",
+    "hubFilename": "/images/cities/lucknow-card.webp",
+    "sha256": "3a99fe2a61908be38ebe0bac34699cf640ae9d55d902a58124f5effa67c7377e",
+    "personType": "Female salaried professional",
+    "landmark": "Bara Imambara",
+    "prompt": "Realistic natural daylight photograph of an Indian Female salaried professional in lucknow, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Bara Imambara background and no watermarks."
+  },
+  {
+    "slug": "surat",
+    "filename": "/images/cities/surat-hero.webp",
+    "hubFilename": "/images/cities/surat-card.webp",
+    "sha256": "4730947b4b73b56cd33a5bbc64dcc387223b6339d41643f34ef2e37d2617e5b6",
+    "personType": "Young salaried couple",
+    "landmark": "Surat Castle",
+    "prompt": "Realistic natural daylight photograph of an Indian Young salaried couple in surat, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Surat Castle background and no watermarks."
+  },
+  {
+    "slug": "kanpur",
+    "filename": "/images/cities/kanpur-hero.webp",
+    "hubFilename": "/images/cities/kanpur-card.webp",
+    "sha256": "19694ed8d06d91096c15004de90fdfb2d94cdedfec9eaa5bc555778f188914e6",
+    "personType": "Small Indian family",
+    "landmark": "JK Temple",
+    "prompt": "Realistic natural daylight photograph of an Indian Small Indian family in kanpur, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus JK Temple background and no watermarks."
+  },
+  {
+    "slug": "nagpur",
+    "filename": "/images/cities/nagpur-hero.webp",
+    "hubFilename": "/images/cities/nagpur-card.webp",
+    "sha256": "073df56706d1d10d58cb1607e2d0dee240a8edc6e8e84c9d1108da885bcb0549",
+    "personType": "Male salaried professional",
+    "landmark": "Deekshabhoomi",
+    "prompt": "Realistic natural daylight photograph of an Indian Male salaried professional in nagpur, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Deekshabhoomi background and no watermarks."
+  },
+  {
+    "slug": "indore",
+    "filename": "/images/cities/indore-hero.webp",
+    "hubFilename": "/images/cities/indore-card.webp",
+    "sha256": "08ad42cd7ffa6730b9ec9acf2393dc67db5a6b3a48acdb5b4b7eb50540d0acef",
+    "personType": "Female salaried professional",
+    "landmark": "Rajwada Palace",
+    "prompt": "Realistic natural daylight photograph of an Indian Female salaried professional in indore, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Rajwada Palace background and no watermarks."
+  },
+  {
+    "slug": "bhopal",
+    "filename": "/images/cities/bhopal-hero.webp",
+    "hubFilename": "/images/cities/bhopal-card.webp",
+    "sha256": "4e343286f62c2881e6bc24f45a4e2f106273c69a9233102063a3d69cc66c28f8",
+    "personType": "Young salaried couple",
+    "landmark": "Upper Lake",
+    "prompt": "Realistic natural daylight photograph of an Indian Young salaried couple in bhopal, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Upper Lake background and no watermarks."
+  },
+  {
+    "slug": "patna",
+    "filename": "/images/cities/patna-hero.webp",
+    "hubFilename": "/images/cities/patna-card.webp",
+    "sha256": "7749fa1b7944d9824d34b63a49f6ceaf3c5846e51894315601e37888826d0082",
+    "personType": "Small Indian family",
+    "landmark": "Golghar",
+    "prompt": "Realistic natural daylight photograph of an Indian Small Indian family in patna, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Golghar background and no watermarks."
+  },
+  {
+    "slug": "vadodara",
+    "filename": "/images/cities/vadodara-hero.webp",
+    "hubFilename": "/images/cities/vadodara-card.webp",
+    "sha256": "3c7cc86cf599eb120c0e96718b94283bd4c8bce45e7eb8512c3eefb8a69d71b6",
+    "personType": "Male salaried professional",
+    "landmark": "Laxmi Vilas Palace",
+    "prompt": "Realistic natural daylight photograph of an Indian Male salaried professional in vadodara, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Laxmi Vilas Palace background and no watermarks."
+  },
+  {
+    "slug": "ludhiana",
+    "filename": "/images/cities/ludhiana-hero.webp",
+    "hubFilename": "/images/cities/ludhiana-card.webp",
+    "sha256": "1d1df711a8871827db6d5ae287823537e6aecedc13beb847f012750bab6fa484",
+    "personType": "Female salaried professional",
+    "landmark": "Clock Tower",
+    "prompt": "Realistic natural daylight photograph of an Indian Female salaried professional in ludhiana, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Clock Tower background and no watermarks."
+  },
+  {
+    "slug": "chandigarh",
+    "filename": "/images/cities/chandigarh-hero.webp",
+    "hubFilename": "/images/cities/chandigarh-card.webp",
+    "sha256": "c7139d70ee38b7c3664016230ba252a9d3d1f4870c666457886847ef466f43c0",
+    "personType": "Young salaried couple",
+    "landmark": "Rock Garden",
+    "prompt": "Realistic natural daylight photograph of an Indian Young salaried couple in chandigarh, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Rock Garden background and no watermarks."
+  },
+  {
+    "slug": "coimbatore",
+    "filename": "/images/cities/coimbatore-hero.webp",
+    "hubFilename": "/images/cities/coimbatore-card.webp",
+    "sha256": "b2ddbaaee72f40084671c3c0d5c17dd7fb3256cb712a6eb24ea64eff1a23e529",
+    "personType": "Small Indian family",
+    "landmark": "Marudamalai",
+    "prompt": "Realistic natural daylight photograph of an Indian Small Indian family in coimbatore, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Marudamalai background and no watermarks."
+  },
+  {
+    "slug": "kochi",
+    "filename": "/images/cities/kochi-hero.webp",
+    "hubFilename": "/images/cities/kochi-card.webp",
+    "sha256": "8f700b376bef81c651bfe6c46dd03535b8470d96733186b791119e940e83dbd5",
+    "personType": "Male salaried professional",
+    "landmark": "Chinese Fishing Nets",
+    "prompt": "Realistic natural daylight photograph of an Indian Male salaried professional in kochi, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Chinese Fishing Nets background and no watermarks."
+  },
+  {
+    "slug": "visakhapatnam",
+    "filename": "/images/cities/visakhapatnam-hero.webp",
+    "hubFilename": "/images/cities/visakhapatnam-card.webp",
+    "sha256": "2e9cd17c0f2ae39c513b851abedeaffbee10ce24cc261f488c675dfb4554db1c",
+    "personType": "Female salaried professional",
+    "landmark": "RK Beach",
+    "prompt": "Realistic natural daylight photograph of an Indian Female salaried professional in visakhapatnam, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus RK Beach background and no watermarks."
+  },
+  {
+    "slug": "agra",
+    "filename": "/images/cities/agra-hero.webp",
+    "hubFilename": "/images/cities/agra-card.webp",
+    "sha256": "b5fe032e0ae6609c23fe63d413037b42924b447161d980758d71422d4d0ccc29",
+    "personType": "Young salaried couple",
+    "landmark": "Taj Mahal",
+    "prompt": "Realistic natural daylight photograph of an Indian Young salaried couple in agra, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Taj Mahal background and no watermarks."
+  },
+  {
+    "slug": "nashik",
+    "filename": "/images/cities/nashik-hero.webp",
+    "hubFilename": "/images/cities/nashik-card.webp",
+    "sha256": "a0aafdc5e5a355e5bb69fd51cf1e5e79cbe9393dd57ead8664684f64bce59df5",
+    "personType": "Small Indian family",
+    "landmark": "Panchavati",
+    "prompt": "Realistic natural daylight photograph of an Indian Small Indian family in nashik, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Panchavati background and no watermarks."
+  },
+  {
+    "slug": "faridabad",
+    "filename": "/images/cities/faridabad-hero.webp",
+    "hubFilename": "/images/cities/faridabad-card.webp",
+    "sha256": "eaa6d20b17cf664871cf1b326d4afcf3394cb4accfe2d265d61081163577c3e9",
+    "personType": "Male salaried professional",
+    "landmark": "Surajkund",
+    "prompt": "Realistic natural daylight photograph of an Indian Male salaried professional in faridabad, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Surajkund background and no watermarks."
+  },
+  {
+    "slug": "meerut",
+    "filename": "/images/cities/meerut-hero.webp",
+    "hubFilename": "/images/cities/meerut-card.webp",
+    "sha256": "1ad3e327dbdde28baefecf64b062340817e8478f2e19a232229cc529f21db7e4",
+    "personType": "Female salaried professional",
+    "landmark": "Augarnath Temple",
+    "prompt": "Realistic natural daylight photograph of an Indian Female salaried professional in meerut, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Augarnath Temple background and no watermarks."
+  },
+  {
+    "slug": "rajkot",
+    "filename": "/images/cities/rajkot-hero.webp",
+    "hubFilename": "/images/cities/rajkot-card.webp",
+    "sha256": "b6799068034f42e9c01b6fe51b6dd7d8135e18dc304d39fb183e45301edc78dd",
+    "personType": "Young salaried couple",
+    "landmark": "Watson Museum",
+    "prompt": "Realistic natural daylight photograph of an Indian Young salaried couple in rajkot, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Watson Museum background and no watermarks."
+  },
+  {
+    "slug": "varanasi",
+    "filename": "/images/cities/varanasi-hero.webp",
+    "hubFilename": "/images/cities/varanasi-card.webp",
+    "sha256": "4a7a46dc68bdf0b9300f6cc4bcadc35fe454282a6806845ad5a1f96d0cc071c0",
+    "personType": "Small Indian family",
+    "landmark": "Dashashwamedh Ghat",
+    "prompt": "Realistic natural daylight photograph of an Indian Small Indian family in varanasi, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Dashashwamedh Ghat background and no watermarks."
+  },
+  {
+    "slug": "thane",
+    "filename": "/images/cities/thane-hero.webp",
+    "hubFilename": "/images/cities/thane-card.webp",
+    "sha256": "fd6c01eefbdc7a3ef1ecb44cc2aa9eafa3440606ec996f9986f130d4d987a591",
+    "personType": "Male salaried professional",
+    "landmark": "Upvan Lake",
+    "prompt": "Realistic natural daylight photograph of an Indian Male salaried professional in thane, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Upvan Lake background and no watermarks."
+  },
+  {
+    "slug": "guwahati",
+    "filename": "/images/cities/guwahati-hero.webp",
+    "hubFilename": "/images/cities/guwahati-card.webp",
+    "sha256": "64e964383ede529dc0d086557c34886b5c7aaf3757eb043af31d09ef6134b168",
+    "personType": "Female salaried professional",
+    "landmark": "Kamakhya Temple",
+    "prompt": "Realistic natural daylight photograph of an Indian Female salaried professional in guwahati, holding a smartphone whose screen clearly shows a green check icon and the exact words \"Loan Approved\", with a soft-focus Kamakhya Temple background and no watermarks."
+  }
+]

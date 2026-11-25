@@ -55,11 +55,7 @@ export default function WomenLoanPage({
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const handleApplyRedirect = () => {
-    if (onApplyClick) {
-      onApplyClick();
-    } else {
-      window.location.href = "https://apply.credit91.com";
-    }
+    window.location.href = `https://apply.credit91.com?utm_source=loancentral&utm_medium=website&utm_campaign=women_${encodeURIComponent(cityName.toLowerCase().replace(/\s+/g, "_"))}`;
   };
 
   const defaultHighlights = [

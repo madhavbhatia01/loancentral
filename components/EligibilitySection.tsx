@@ -109,7 +109,7 @@ export default function EligibilitySection({ onApplyClick }: EligibilitySectionP
           </div>
 
           <a
-            href="https://apply.credit91.com"
+            href="https://apply.credit91.com?utm_source=loancentral&utm_medium=website&utm_campaign=eligibility_cta"
             className="min-h-[48px] px-6 py-3 rounded-xl hm-primary hm-hover-primary active:scale-[0.99] hm-text-paper font-bold text-sm flex items-center justify-center gap-2 shadow-md hm-shadow-primary transition-colors whitespace-nowrap text-center"
           >
             <span>Check My Eligibility</span>

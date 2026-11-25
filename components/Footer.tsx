@@ -13,7 +13,7 @@ export default function Footer() {
     { label: "Kolkata", href: "/personal-loan-in-kolkata" },
     { label: "Ahmedabad", href: "/personal-loan-in-ahmedabad" },
     { label: "Pune", href: "/personal-loan-in-pune" },
-    { label: "All cities", href: "/sitemap" },
+    { label: "Loans by Cities", href: "/loans-by-cities" },
   ];
 
   const loanBySalary = [

@@ -13,7 +13,7 @@ export default function ClientLayoutWrapper({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleApplyRedirect = () => {
-    window.location.href = "https://apply.credit91.com";
+    window.location.href = "https://apply.credit91.com?utm_source=loancentral&utm_medium=website&utm_campaign=loancentral_layout";
   };
 
   return (

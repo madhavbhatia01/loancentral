@@ -42,22 +42,24 @@ export default function CityLoanPage({
   cityName,
   stateName,
   landmark,
-  heroImageSrc = "/images/delhi-hero.webp",
+  heroImageSrc,
   highlights,
   popularSectors,
   faqs = [],
   avgApprovalTime,
   onApplyClick,
 }: CityLoanPageProps) {
+  const citySlug = cityName.toLowerCase().replace(/\s+/g, "-");
+  const resolvedHeroSrc =
+    heroImageSrc ||
+    `/images/cities/${citySlug === "bangalore" ? "bengaluru" : citySlug}-hero.webp`;
   const activeLandmark = landmark || cityName;
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const handleApplyRedirect = () => {
-    if (onApplyClick) {
-      onApplyClick();
-    } else {
-      window.location.href = "https://apply.credit91.com";
-    }
+    const pagePath = window.location.pathname.replace(/^\/+|\/+$/g, "") || `personal-loan-in-${citySlug}`;
+    const sourcePage = `${window.location.origin}/${pagePath}`;
+    window.location.href = `https://apply.credit91.com/?utm_source=loancentral&utm_medium=website&utm_campaign=${encodeURIComponent(pagePath)}&utm_content=${encodeURIComponent(sourcePage)}`;
   };
 
   const defaultFaqs = [
@@ -110,7 +112,7 @@ export default function CityLoanPage({
 
               {/* Main Heading */}
               <h1 className="text-[clamp(2.0rem,7vw,3.25rem)] font-black tracking-tight leading-[1.14] hm-text-ink">
-                Personal Loans for Salaried in{" "}
+                Instant Personal Loans for Salaried in{" "}
                 <span className="hm-text-blue">
                   {cityName}.
                 </span>
@@ -125,7 +127,7 @@ export default function CityLoanPage({
               <div className="space-y-2.5 pt-1">
                 <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border hm-border-rule shadow-lg aspect-[16/10] sm:aspect-[16/9] hm-bg-paper-deep group">
                   <Image
-                    src={heroImageSrc}
+                    src={resolvedHeroSrc}
                     alt={`Salaried professional in ${cityName} near ${activeLandmark} with LoanCentral verified loan status`}
                     fill
                     priority
@@ -187,30 +189,23 @@ export default function CityLoanPage({
         </div>
       </section>
 
-      {/* 2. Direct Factual Introduction */}
-      <section className="py-10 sm:py-14 hm-bg-card border-b hm-border-rule">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full hm-bg-blue-soft hm-text-blue text-xs font-bold ">
-            <Building2 className="w-3.5 h-3.5" />
-            <span>Factual Overview</span>
-          </div>
-
-          <h2 className="text-2xl sm:text-3xl font-black hm-text-ink tracking-tight">
-            How Personal Loans Operate for {cityName} Salaried Applicants
-          </h2>
-
-          <div className="hm-text-ink-soft text-sm sm:text-base leading-relaxed space-y-4">
-            <p>
-              Managing temporary financial requirements between monthly paychecks in a dynamic metropolitan center like <strong>{cityName}</strong> requires dependable, transparent credit options. Whether dealing with unexpected medical outlays, urgent household maintenance, seasonal utility bills, or time-sensitive family commitments, salaried professionals often need urgent funds without being locked into multi-year commitments.
-            </p>
-            <p>
-              <strong>LoanCentral</strong> operates as an official digital Lending Service Provider (LSP). We do not operate as a bank or Non-Banking Financial Company (NBFC) and do not directly lend money. Instead, we connect creditworthy salaried applicants with trusted, Reserve Bank of India (RBI) regulated NBFC partners.
-            </p>
-            <p>
-              All loan underwriting, credit assessment, Annual Percentage Rate (APR) determination, and capital disbursal are conducted independently by our partner NBFCs. Approvals are strictly subject to individual underwriting assessments and document verification—approval is never automatic or guaranteed.
-            </p>
-          </div>
-        </div>
+      {/* 2. Scannable Marketing Overview */}
+      <section className="py-6 sm:py-8 hm-bg-card border-b hm-border-rule">
+        <ul className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {[
+            "Fast digital application from your phone",
+            "Secure paperless verification journey",
+            "Designed around salaried professionals",
+            "Review clear terms before confirming",
+            "Support for urgent personal expenses",
+            "Simple repayment planning tools",
+          ].map((point) => (
+            <li key={point} className="rounded-xl hm-bg-paper-soft border hm-border-rule p-3 flex items-start gap-2.5 text-sm hm-text-ink-soft">
+              <CheckCircle2 className="w-4 h-4 hm-text-mint shrink-0 mt-0.5" />
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* 3. Dedicated Information for Salaried Applicants */}
@@ -223,7 +218,7 @@ export default function CityLoanPage({
             <h2 className="text-2xl sm:text-3xl font-black hm-text-ink tracking-tight">
               Designed Strictly for Salaried Employees in {cityName}
             </h2>
-            <p className="text-sm hm-text-ink-soft leading-relaxed">
+            <p className="hidden text-sm hm-text-ink-soft leading-relaxed">
               To ensure sustainable affordability and align repayments directly with payroll cycles, this personal credit facility is exclusively accessible to salaried professionals.
             </p>
           </div>
@@ -289,7 +284,7 @@ export default function CityLoanPage({
       </section>
 
       {/* 4. Representative Examples for INR 30,000 and INR 35,000 */}
-      <section className="py-10 sm:py-14 hm-bg-card border-b hm-border-rule">
+      <section className="hidden py-10 sm:py-14 hm-bg-card border-b hm-border-rule">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-bold hm-text-blue block">
@@ -394,7 +389,7 @@ export default function CityLoanPage({
       </section>
 
       {/* 5. Documents Typically Required */}
-      <section className="py-10 sm:py-14 hm-bg-paper-soft border-b hm-border-rule">
+      <section className="hidden py-10 sm:py-14 hm-bg-paper-soft border-b hm-border-rule">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-bold hm-text-blue block">
@@ -455,7 +450,7 @@ export default function CityLoanPage({
       </section>
 
       {/* 6. Digital Application Steps */}
-      <section className="py-10 sm:py-14 hm-bg-card border-b hm-border-rule">
+      <section className="hidden py-10 sm:py-14 hm-bg-card border-b hm-border-rule">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-bold hm-text-blue block">
@@ -516,7 +511,7 @@ export default function CityLoanPage({
       </section>
 
       {/* 7. Repayment-Period and Total-Cost Guidance */}
-      <section className="py-10 sm:py-14 hm-bg-paper-soft border-b hm-border-rule">
+      <section className="hidden py-10 sm:py-14 hm-bg-paper-soft border-b hm-border-rule">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full hm-bg-mint-soft hm-text-mint text-xs font-bold ">
             <Calendar className="w-3.5 h-3.5" />
@@ -553,7 +548,7 @@ export default function CityLoanPage({
       </section>
 
       {/* 8. How to Compare Regulated Lending Offers */}
-      <section className="py-10 sm:py-14 hm-bg-card border-b hm-border-rule">
+      <section className="hidden py-10 sm:py-14 hm-bg-card border-b hm-border-rule">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-bold hm-text-blue block">
@@ -604,7 +599,7 @@ export default function CityLoanPage({
       </section>
 
       {/* 9. Responsible Borrowing Checklist */}
-      <section className="py-10 sm:py-14 hm-bg-paper-soft border-b hm-border-rule">
+      <section className="hidden py-10 sm:py-14 hm-bg-paper-soft border-b hm-border-rule">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full hm-bg-pear-soft hm-text-coral text-xs font-bold ">
             <Scale className="w-3.5 h-3.5" />

@@ -3,11 +3,13 @@ import type { Metadata } from "next";
 import DelhiPageContent from "./DelhiPageContent";
 
 export const metadata: Metadata = {
-  title: "Personal Loan in Delhi for Salaried Employees | LoanCentral",
+  title: "Instant Personal Loan in Delhi for Salaried Employees | LoanCentral",
   description:
     "Apply for personal loans for salaried in Delhi from ₹10,000 to ₹60,000 for salaried employees (min. ₹30,000 monthly income). Single bullet repayment in 7 to 50 days through lending partner Credit 91.",
   keywords: [
     "personal loan in delhi",
+    "instant personal loan in delhi",
+    "instant loan in delhi",
     "loan in delhi",
     "personal loan delhi",
     "inr 30000 loan in delhi",
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
     canonical: "https://loancentral.in/personal-loan-in-delhi/",
   },
   openGraph: {
-    title: "Personal Loan in Delhi for Salaried Employees | LoanCentral",
+    title: "Instant Personal Loan in Delhi for Salaried Employees | LoanCentral",
     description:
       "Apply for personal loans for salaried in Delhi from ₹10,000 to ₹60,000. Single bullet repayment from 7 to 50 days aligned with your salary schedule through lending partner Credit 91.",
     url: "https://loancentral.in/personal-loan-in-delhi/",
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Loan in Delhi for Salaried Employees | LoanCentral",
+    title: "Instant Personal Loan in Delhi for Salaried Employees | LoanCentral",
     description:
       "personal credit for salaried professionals in Delhi from ₹10,000 to ₹60,000 with transparent single bullet repayment.",
     images: ["https://loancentral.in/images/delhi-hero.jpg"],
