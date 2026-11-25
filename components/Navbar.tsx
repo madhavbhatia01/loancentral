@@ -61,7 +61,7 @@ export default function Navbar({ onApplyClick, onMenuToggle }: NavbarProps) {
   return (
     <>
       <header
-        className="sticky top-0 z-40 w-full border-b shadow-xs transition-colors"
+        className="sticky top-0 z-40 w-full border-b shadow-xs transition-colors bg-white !bg-white"
         style={{ backgroundColor: "#ffffff", borderColor: "#e2e8f0" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between gap-3">
