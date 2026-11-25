@@ -267,10 +267,19 @@ export default function FintechLoanPage({
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-full md:w-auto">
+              <div className="flex-shrink-0 w-full md:w-[360px] flex flex-col gap-4">
+                <div className="relative aspect-[3/2] w-full rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
+                  <Image
+                    src="/images/women-hero-hub.webp"
+                    alt="Confident Indian salaried woman holding smartphone showing Loan Disbursed"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 360px"
+                    className="object-cover"
+                  />
+                </div>
                 <Link
                   href="/personal-loan-for-women"
-                  className="w-full md:w-auto min-h-[50px] px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 active:scale-[0.99] text-white font-black text-sm sm:text-base shadow-lg transition-colors flex items-center justify-center gap-2.5 group"
+                  className="w-full min-h-[50px] px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 active:scale-[0.99] text-white font-black text-sm sm:text-base shadow-lg transition-colors flex items-center justify-center gap-2.5 group"
                 >
                   <span>Explore Women's Loan Hub</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
